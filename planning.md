@@ -35,3 +35,5 @@ All AI prompts each team member uses.
 
 
 *In addition, after the completion of the project, everyone must complete this survey: https://shsu.co1.qualtrics.com/jfe/form/SV_9Y3DmKjXyPSYgsu*
+
+# Notes
