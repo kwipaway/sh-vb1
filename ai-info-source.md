@@ -232,4 +232,26 @@ You can receive your Degree Plan by running an uAchieve Degree Audit:
 - Click on "Education Goals" on the left side menu or "Create New Goal" near the bottom of the homepage
 ### Select Education Goal Type
 - If you see N/A by the goal you are trying to create, it means you are ineligible for that degree level. If this is an error, please contact your S1 to get your civilian education level updated in your record.
-  
+### Select Academic Institution
+- Enter Your Academic Institution name and select from the drop-down list.
+  - You may need to enter your Academic Institution Student ID if known, click "Next".
+### Select Degree Program
+There is a keyword search to help you find your degree program. 
+    - If you do not see the degree program you are pursuing, contact the school to have the degree program loaded to the Academic Institution (AI) Portal.
+  - Select the Degree Program from the drop-down list, click "Next".
+### Upload Degree Plan
+- "Please upload your degree plan."
+- Drag and drop Evaluated Degree Plan
+### Submit Education Goal
+The required credit should be the number of hours needed to complete your degree AFTER transfer hours were applied towards degree. If unsure, use the following:
+- Associate's Degree - enter 64 credits
+- Bachelor's Degree - enter 120 credits
+- Master's Degree - enter 36 credits
+## Education Services Specialist (ESS)
+Questions about Army Ignited? Contact your state's ARNG Education Center
+- Jovanda Curry
+- Education Services Specialist
+- Jovanda.t.curry.civ@army.mil
+## Final Step
+You will receive a form from the Army via email. After you receive thsi form, you will email it to wsubursar@wright.edu.
+
