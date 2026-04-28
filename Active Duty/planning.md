@@ -33,3 +33,23 @@ All AI prompts each team member uses.
 *In addition, after the completion of the project, everyone must complete this survey: https://shsu.co1.qualtrics.com/jfe/form/SV_9Y3DmKjXyPSYgsu*
 
 # Notes
+SHSU Orange Text Rgb: 245,100,35
+SHSU White Text Rgb: 255,255,255
+SHSU Dark Cyan Text Rgb: 0,72,83
+SHSU Lime Text Rgb: 163,210,55
+Bold Orange Text Format:
+    font-family: gt-flexa-compressed, sans-serif;
+    font-size: 3.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: .8;
+Paragraph(Under Bold Orange Text) Format
+    tab-size: 4;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+Bold Black Text Format
+    font-family: gt-america, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700; 

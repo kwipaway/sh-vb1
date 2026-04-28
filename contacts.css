@@ -1,0 +1,210 @@
+:root {
+  --shsu-orange: rgb(245, 100, 35);
+  --shsu-white: rgb(255, 255, 255);
+  --shsu-dark-cyan: rgb(0, 72, 83);
+  --shsu-lime: rgb(163, 210, 55);
+  --page-bg: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--shsu-dark-cyan);
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.page-wrap {
+  width: min(1080px, 100% - 40px);
+  margin: 38px auto 40px;
+}
+
+.page {
+  background: #f7f7f7;
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  padding: 56px 56px 40px;
+}
+
+.headline {
+  margin: 0;
+  color: var(--shsu-orange);
+  font-family: gt-flexa-compressed, sans-serif;
+  font-size: 3.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 0.8;
+  letter-spacing: 0;
+}
+
+.top-contact {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 54px;
+  align-items: start;
+}
+
+.contact-details {
+  max-width: 300px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.5;
+  font-family: gt-america, sans-serif;
+}
+
+.contact-details p {
+  margin: 0 0 7px;
+}
+
+.contact-details .office {
+  margin-top: 12px;
+}
+
+.staff-section {
+  margin-top: 68px;
+}
+
+.team-card {
+  margin-top: 18px;
+  max-width: 700px;
+  background: var(--shsu-dark-cyan);
+  border-radius: 6px;
+  padding: 14px 16px 20px;
+  color: var(--shsu-white);
+}
+
+.team-card h3 {
+  margin: 0 0 10px;
+  color: var(--shsu-lime);
+  font-family: gt-america, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.team-card p {
+  margin: 0 0 9px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.team-card .staff-name {
+  font-family: gt-america, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+.team-card a {
+  color: var(--shsu-white);
+  text-decoration-thickness: 1px;
+}
+
+.footer-top {
+  margin-top: 46px;
+  border-top: 1px solid var(--shsu-orange);
+  padding-top: 28px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px 40px;
+  align-items: start;
+}
+
+.footer-brand {
+  color: var(--shsu-orange);
+  font-family: gt-flexa-compressed, sans-serif;
+  font-size: 4.2rem;
+  line-height: 0.8;
+}
+
+.resource-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 10px 62px;
+  max-width: 700px;
+}
+
+.resource-links a {
+  color: var(--shsu-dark-cyan);
+  text-decoration: none;
+  font-family: gt-america, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.resource-links a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 38px;
+  border-top: 1px solid var(--shsu-dark-cyan);
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.member {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: gt-america, sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.3;
+  font-weight: 700;
+  max-width: 220px;
+}
+
+.motto {
+  margin: 0;
+  text-align: right;
+  text-transform: uppercase;
+  font-family: gt-america, sans-serif;
+  font-size: 0.74rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+@media (max-width: 860px) {
+  .page {
+    padding: 34px 24px 24px;
+  }
+
+  .headline {
+    font-size: 2.9rem;
+  }
+
+  .top-contact {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .staff-section {
+    margin-top: 44px;
+  }
+
+  .resource-links {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 9px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .motto {
+    text-align: left;
+  }
+}
