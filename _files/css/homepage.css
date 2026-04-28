@@ -1,0 +1,541 @@
+
+/* Global reset for spacing and box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base body typography and background */
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Top navigation container spacing */
+.utilities-nav {
+    padding: 1rem 2rem;
+}
+
+/* Layout for top navigation links */
+.utilities-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+/* Styling for top navigation text links */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+/* Hover underline for nav links */
+.nav-link:hover {
+    border-bottom-color: rgb(245, 100, 35);
+}
+
+/* Button styling for nav buttons */
+.nav-button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for nav buttons */
+.nav-button:hover {
+    background-color: rgb(245, 100, 35);
+    border-color: rgb(245, 100, 35);
+}
+
+/* Circular search button */
+.search-button {
+    border: 2px solid white;
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Search icon size */
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Page header background and text alignment */
+.page-header {
+    background-color: rgb(0, 72, 83);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* General header styling (duplicate of page-header) */
+header {
+    background-color: rgb(0, 72, 83);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Main title styling */
+header h1 {
+    font-family: gt-flexa-compressed, sans-serif;
+    font-size: 3.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 0.8;
+    color: rgb(245, 100, 35);
+    margin-bottom: 0.5rem;
+}
+
+/* Subtitle text */
+header p {
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* Page content container width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Intro section card styling */
+.intro-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Paragraph styling inside intro section */
+.intro-section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Benefit overview card styling */
+.benefits-overview {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Section title styling */
+.section-title {
+    font-family: gt-america, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(0, 72, 83);
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid rgb(245, 100, 35);
+    padding-bottom: 0.5rem;
+}
+
+/* Subsection title styling */
+.subsection-title {
+    font-family: gt-america, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(245, 100, 35);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Table layout and styling */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Table header background */
+.comparison-table thead {
+    background-color: rgb(0, 72, 83);
+    color: white;
+}
+
+/* Table header cells */
+.comparison-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 700;
+    border: 1px solid #ddd;
+}
+
+/* Table body cells */
+.comparison-table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+/* Alternating row color */
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Hover highlight */
+.comparison-table tbody tr:hover {
+    background-color: #efefef;
+}
+
+/* Highlighted requirement list box */
+.requirement-list {
+    background: #f9f9f9;
+    border-left: 4px solid rgb(245, 100, 35);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+/* Requirement list title */
+.requirement-list h4 {
+    color: rgb(0, 72, 83);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Requirement list bullets */
+.requirement-list ul {
+    list-style-position: inside;
+    color: #333;
+}
+
+/* Individual requirement spacing */
+.requirement-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Green highlight box */
+.highlight-box {
+    background: rgb(163, 210, 55);
+    color: rgb(0, 72, 83);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    font-weight: 500;
+}
+
+/* Caution box styling */
+.caution-box {
+    background: #fff3cd;
+    border-left: 4px solid #ff6600;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+/* Bold caution text */
+.caution-box strong {
+    color: rgb(245, 100, 35);
+}
+
+/* Grid layout for info cards */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Individual info card styling */
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 4px solid rgb(245, 100, 35);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Info card title */
+.info-card h3 {
+    color: rgb(0, 72, 83);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Info card text */
+.info-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Header layout with logo + text */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Logo size */
+.logo {
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Centered header text */
+.header-text {
+    text-align: center;
+}
+
+/* Footer styling */
+footer {
+    background-color: rgb(0, 72, 83);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Small italic note text */
+.note {
+    font-style: italic;
+    color: #666;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+/* Scroll indicator base styling (hidden by default) */
+.scroll-indicator,
+.scroll-indicator-top,
+.scroll-indicator-bottom {
+    display: none;
+    text-align: center;
+    padding: 1.5rem 0;
+    color: rgb(0, 72, 83);
+    font-weight: 500;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Scroll arrow animation */
+.scroll-arrows {
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Individual arrow animation */
+.arrow {
+    display: inline-block;
+    animation: bounce 2s infinite;
+    margin: 0 0.25rem;
+}
+
+/* Arrow animation delays */
+.arrow:nth-child(2) { animation-delay: 0.2s; }
+.arrow:nth-child(3) { animation-delay: 0.4s; }
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-10px); opacity: 0.7; }
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Show top scroll indicator on short screens */
+@media (max-height: 700px) {
+    .scroll-indicator-top { display: block; }
+}
+
+/* Show bottom scroll indicator on medium-height screens */
+@media (min-height: 700px) and (max-height: 1000px) {
+    .scroll-indicator-bottom { display: block; }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.5rem; }
+    .section-title { font-size: 1.5rem; }
+    .comparison-table { font-size: 0.9rem; }
+    .comparison-table th,
+    .comparison-table td { padding: 0.75rem 0.5rem; }
+}
+
+/* Layout wrapper for sidebar + main content */
+.layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Sticky left sidebar menu */
+.left-menu {
+    width: 280px;
+    flex: none;
+    position: sticky;
+    top: 1.5rem;
+    padding: 1rem 0;
+}
+
+/* Sidebar nav padding */
+.left-menu nav {
+    padding: 0 1rem;
+}
+
+/* Sidebar list styling */
+.left-menu ul { list-style: none; padding: 0; 
+}
+.left-menu ul li { 
+    position: relative;
+    border-bottom: 2px solid rgb(0, 72, 83); 
+}
+
+/* Sidebar link styling */
+.left-menu ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: rgb(0, 72, 83);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Sidebar link hover color */
+.left-menu ul li a:hover { color: #f56423; }
+
+/* Orange dot indicator on hover */
+.left-menu ul li .dot {
+    width: 6px;
+    height: 6px;
+    background: #f56423;
+    border-radius: 50%;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+    transition: transform .18s ease, opacity .18s ease;
+}
+
+/* Show dot on hover */
+.left-menu ul li:hover .dot {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+}
+
+/* Light border utility class */
+.border-b-theme-on-primary {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Main content area */
+.main-content {
+    flex: 1 1 auto;
+}
+
+/* Mobile layout: stack sidebar + content */
+@media (max-width: 768px) {
+    .layout { flex-direction: column; }
+    .left-menu { position: static; width: 100%; }
+}
+
+/* Hamburger toggle button styling */
+.menu-toggle-btn {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Individual hamburger lines */
+.menu-toggle-btn .hamburger-line {
+    width: 28px;
+    height: 3px;
+    background-color: rgb(245, 100, 35);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger button hover effect */
+.menu-toggle-btn:hover .hamburger-line {
+    width: 32px;
+}
+
+/* Animated hamburger - rotate first line */
+.menu-toggle-btn.active .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+/* Animated hamburger - hide middle line */
+.menu-toggle-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+/* Animated hamburger - rotate last line */
+.menu-toggle-btn.active .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Collapsed state for left menu */
+.left-menu.collapsed {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Expanded state for left menu */
+.left-menu {
+    width: 280px;
+    opacity: 1;
+    overflow: visible;
+    transition: all 0.3s ease;
+}
+
+/* Layout adjustment when menu is collapsed */
+.layout.menu-collapsed {
+    margin-left: 0;
+}
