@@ -123,7 +123,125 @@ header p {
     padding: 2rem;
 }
 
-/* Intro section card styling */
+/* Hamburger toggle button styling */
+.menu-toggle-btn {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Individual hamburger lines */
+.menu-toggle-btn .hamburger-line {
+    width: 28px;
+    height: 3px;
+    background-color: rgb(245, 100, 35);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger button hover effect */
+.menu-toggle-btn:hover .hamburger-line {
+    width: 32px;
+}
+
+/* Animated hamburger - rotate first line */
+.menu-toggle-btn.active .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+/* Animated hamburger - hide middle line */
+.menu-toggle-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+/* Animated hamburger - rotate last line */
+.menu-toggle-btn.active .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Layout wrapper for sidebar + main content */
+.layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Sticky left sidebar menu */
+.left-menu {
+    width: 280px;
+    flex: none;
+    position: sticky;
+    top: 1.5rem;
+    padding: 1rem 0;
+}
+
+/* Sidebar nav padding */
+.left-menu nav {
+    padding: 0 1rem;
+}
+
+/* Sidebar list styling */
+.left-menu ul { list-style: none; padding: 0; 
+}
+.left-menu ul li { 
+    position: relative;
+    border-bottom: 2px solid rgb(0, 72, 83); 
+}
+
+/* Sidebar link styling */
+.left-menu ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: rgb(0, 72, 83);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Sidebar link hover color */
+.left-menu ul li a:hover { color: #f56423; }
+
+/* Orange dot indicator on hover */
+.left-menu ul li .dot {
+    width: 6px;
+    height: 6px;
+    background: #f56423;
+    border-radius: 50%;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+    transition: transform .18s ease, opacity .18s ease;
+}
+
+/* Show dot on hover */
+.left-menu ul li:hover .dot {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+}
+
+/* Light border utility class */
+.border-b-theme-on-primary {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Main content area */
+.main-content {
+    flex: 1 1 auto;
+}
 .intro-section {
     background: white;
     padding: 2rem;
@@ -391,139 +509,6 @@ footer {
     .comparison-table { font-size: 0.9rem; }
     .comparison-table th,
     .comparison-table td { padding: 0.75rem 0.5rem; }
-}
-
-/* Layout wrapper for sidebar + main content */
-.layout {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-}
-
-/* Sticky left sidebar menu */
-.left-menu {
-    width: 280px;
-    flex: none;
-    position: sticky;
-    top: 1.5rem;
-    padding: 1rem 0;
-}
-
-/* Sidebar nav padding */
-.left-menu nav {
-    padding: 0 1rem;
-}
-
-/* Sidebar list styling */
-.left-menu ul { list-style: none; padding: 0; 
-}
-.left-menu ul li { 
-    position: relative;
-    border-bottom: 2px solid rgb(0, 72, 83); 
-}
-
-/* Sidebar link styling */
-.left-menu ul li a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: rgb(0, 72, 83);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* Sidebar link hover color */
-.left-menu ul li a:hover { color: #f56423; }
-
-/* Orange dot indicator on hover */
-.left-menu ul li .dot {
-    width: 6px;
-    height: 6px;
-    background: #f56423;
-    border-radius: 50%;
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%) scale(0);
-    opacity: 0;
-    transition: transform .18s ease, opacity .18s ease;
-}
-
-/* Show dot on hover */
-.left-menu ul li:hover .dot {
-    transform: translateY(-50%) scale(1);
-    opacity: 1;
-}
-
-/* Light border utility class */
-.border-b-theme-on-primary {
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-/* Main content area */
-.main-content {
-    flex: 1 1 auto;
-}
-
-/* Mobile layout: menu slides in from left as drawer */
-@media (max-width: 768px) {
-    .layout {
-        flex-direction: column;
-        position: relative;
-    }
-    
-    .main-content {
-        width: 100%;
-        flex: 1;
-    }
-}
-
-/* Hamburger toggle button styling */
-.menu-toggle-btn {
-    position: fixed;
-    left: 20px;
-    top: 20px;
-    z-index: 1000;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    gap: 6px;
-    transition: all 0.3s ease;
-}
-
-/* Individual hamburger lines */
-.menu-toggle-btn .hamburger-line {
-    width: 28px;
-    height: 3px;
-    background-color: rgb(245, 100, 35);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Hamburger button hover effect */
-.menu-toggle-btn:hover .hamburger-line {
-    width: 32px;
-}
-
-/* Animated hamburger - rotate first line */
-.menu-toggle-btn.active .hamburger-line:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-/* Animated hamburger - hide middle line */
-.menu-toggle-btn.active .hamburger-line:nth-child(2) {
-    opacity: 0;
-}
-
-/* Animated hamburger - rotate last line */
-.menu-toggle-btn.active .hamburger-line:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
 }
 
 /* Desktop behavior: Menu collapses in place */
