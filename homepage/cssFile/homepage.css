@@ -464,10 +464,17 @@ footer {
     flex: 1 1 auto;
 }
 
-/* Mobile layout: stack sidebar + content */
+/* Mobile layout: menu slides in from left as drawer */
 @media (max-width: 768px) {
-    .layout { flex-direction: column; }
-    .left-menu { position: static; width: 100%; }
+    .layout {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .main-content {
+        width: 100%;
+        flex: 1;
+    }
 }
 
 /* Hamburger toggle button styling */
@@ -519,23 +526,71 @@ footer {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Collapsed state for left menu */
-.left-menu.collapsed {
-    width: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
+/* Desktop behavior: Menu collapses in place */
+@media (min-width: 769px) {
+    /* Collapsed state for left menu on desktop */
+    .left-menu.collapsed {
+        width: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    /* Expanded state for left menu on desktop */
+    .left-menu {
+        width: 280px;
+        opacity: 1;
+        overflow: visible;
+        transition: all 0.3s ease;
+    }
+
+    /* Layout adjustment when menu is collapsed on desktop */
+    .layout.menu-collapsed {
+        margin-left: 0;
+    }
 }
 
-/* Expanded state for left menu */
-.left-menu {
-    width: 280px;
-    opacity: 1;
-    overflow: visible;
-    transition: all 0.3s ease;
-}
+/* Mobile behavior: Menu slides in from left */
+@media (max-width: 768px) {
+    /* Mobile menu starts off-screen to the left */
+    .left-menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 280px;
+        height: 100vh;
+        background: white;
+        z-index: 999;
+        overflow-y: auto;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        opacity: 1;
+        padding-top: 60px;
+    }
 
-/* Layout adjustment when menu is collapsed */
-.layout.menu-collapsed {
-    margin-left: 0;
+    /* Mobile menu slides in when not collapsed */
+    .left-menu:not(.collapsed) {
+        transform: translateX(0);
+    }
+
+    /* Mobile menu hidden when collapsed */
+    .left-menu.collapsed {
+        transform: translateX(-100%);
+        width: 280px;
+        opacity: 1;
+        overflow: hidden;
+    }
+
+    /* Semi-transparent overlay when mobile menu is open */
+    .layout:has(.left-menu:not(.collapsed))::before {
+        content: '';
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 500;
+    }
 }
