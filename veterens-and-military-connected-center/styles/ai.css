@@ -104,6 +104,7 @@ iframe {
     line-height: 0.9;
     margin: 0;
     text-transform: uppercase;
+    color: var(--orange);
 }
 
 .hero-right p {
