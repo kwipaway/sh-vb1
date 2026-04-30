@@ -8,120 +8,247 @@
 
 /* Base body typography and background */
 body {
-    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+                 "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    tab-size: 4;
 }
 
-/* Top navigation container spacing */
-.utilities-nav {
-    padding: 1rem 2rem;
+/* =============================================
+   Custom Properties
+   ============================================= */
+:root {
+  --shsu-orange: rgb(245, 100, 35);
+  --shsu-white: rgb(255, 255, 255);
+  --shsu-dark-cyan: rgb(0, 72, 83);
+  --shsu-lime: rgb(163, 210, 55);
+
+  --gray-50: #f5f5f3;
+  --gray-200: #e2e0da;
+  --gray-500: #6b6b6b;
+  --gray-800: #2a2a2a;
 }
 
-/* Layout for top navigation links */
-.utilities-list {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1.5rem;
-    list-style: none;
-}
+img { max-width: 100%; display: block; }
 
-/* Styling for top navigation text links */
-.nav-link {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-}
-
-/* Hover underline for nav links */
-.nav-link:hover {
-    border-bottom-color: rgb(245, 100, 35);
-}
-
-/* Button styling for nav buttons */
-.nav-button {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* Hover effect for nav buttons */
-.nav-button:hover {
-    background-color: rgb(245, 100, 35);
-    border-color: rgb(245, 100, 35);
-}
-
-/* Circular search button */
-.search-button {
-    border: 2px solid white;
-    padding: 0.5rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Search icon size */
-.search-icon {
-    width: 20px;
-    height: 20px;
-}
-
-/* Page header background and text alignment */
-.page-header {
-    background-color: rgb(0, 72, 83);
-    color: white;
-    padding: 2rem;
-    text-align: center;
-}
-
-/* General header styling (duplicate of page-header) */
-header {
-    background-color: rgb(0, 72, 83);
-    color: white;
-    padding: 2rem;
-    text-align: center;
-}
-
-/* Main title styling */
-header h1 {
-    font-family: gt-flexa-compressed, sans-serif;
-    font-size: 3.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    line-height: 0.8;
-    color: rgb(245, 100, 35);
-    margin-bottom: 0.5rem;
-}
-
-/* Subtitle text */
-header p {
-    font-size: 1.1rem;
-    color: white;
-}
-
-/* Page content container width */
+/* =============================================
+   Container
+   ============================================= */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
+
+/* =============================================
+   Utility Bar
+   ============================================= */
+.util-bar {
+  background: var(--shsu-dark-cyan);
+  padding: 0.45rem 0;
+}
+
+.util-inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.util-bar a {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.util-bar a:hover {
+  color: var(--shsu-white);
+}
+
+.util-btn {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.18rem 0.7rem;
+}
+
+.util-search {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.util-search:hover {
+  color: var(--shsu-white);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* =============================================
+   Site Header
+   ============================================= */
+.site-header {
+  background: var(--shsu-white);
+  border-bottom: 4px solid var(--shsu-orange);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  gap: 1.5rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  color: var(--shsu-orange);
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo-link svg {
+  height: 38px;
+  width: auto;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.45rem 0.7rem;
+  color: var(--shsu-dark-cyan);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-family: gt-america, sans-serif;
+  font-weight: 700;
+  line-height: 1.5rem;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.main-nav a:hover {
+  color: var(--shsu-orange);
+  border-bottom-color: var(--shsu-orange);
+}
+
+.nav-apply {
+  background: var(--shsu-orange) !important;
+  color: var(--shsu-white) !important;
+  border-radius: 4px;
+  padding: 0.35rem 0.85rem !important;
+  margin-left: 0.35rem;
+  border-bottom-color: transparent !important;
+}
+
+.nav-apply:hover {
+  background: var(--shsu-dark-cyan) !important;
+  color: var(--shsu-white) !important;
+  border-bottom-color: transparent !important;
+}
+
+.nav-request {
+  border: 2px solid var(--shsu-dark-cyan) !important;
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem !important;
+  margin-left: 0.25rem;
+  border-bottom-color: var(--shsu-dark-cyan) !important;
+}
+
+.nav-request:hover {
+  background: var(--shsu-dark-cyan);
+  color: var(--shsu-white) !important;
+  border-color: var(--shsu-dark-cyan) !important;
+}
+
+/* =============================================
+   Page Title Section
+   ============================================= */
+.page-title-section {
+  background: var(--shsu-dark-cyan);
+}
+
+.hero-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.page-title-inner {
+  padding: 2.25rem 0 2.75rem;
+}
+
+.page-title {
+  font-family: gt-flexa-compressed, sans-serif;
+  font-size: 3.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 0.8;
+  color: var(--shsu-orange);
+  max-width: 860px;
+}
+
+/* =============================================
+   "Before You Begin" Notice
+   ============================================= */
+.notice-band {
+  background: var(--shsu-white);
+  border-top: none;
+  padding: 2rem 0;
+}
+
+.notice {
+  background: var(--shsu-white);
+  border-left: 6px solid var(--shsu-orange);
+  padding: 1.4rem 1.75rem;
+  box-shadow: 0 4px 18px rgba(0, 72, 83, 0.1);
+  border-radius: 2px;
+}
+
+.notice h3 {
+  font-family: gt-america, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--shsu-dark-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.notice p {
+  font-size: 0.96rem;
+  margin: 0;
+}
+
 
 /* ========================================================================================================
    HAMBURGER MENU BUTTON & SIDE NAVIGATION WINDOW - All responsive styles for desktop and mobile screens
@@ -414,26 +541,7 @@ header p {
     font-size: 0.95rem;
 }
 
-/* Header layout with logo + text */
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
 
-/* Logo size */
-.logo {
-    width: 100px;
-    height: auto;
-    flex-shrink: 0;
-}
-
-/* Centered header text */
-.header-text {
-    text-align: center;
-}
 
 /* Footer styling */
 footer {
@@ -508,7 +616,7 @@ footer {
 
 /* Responsive adjustments for small screens */
 @media (max-width: 768px) {
-    header h1 { font-size: 2.5rem; }
+    .page-title { font-size: 2.5rem; }
     .section-title { font-size: 1.5rem; }
     .comparison-table { font-size: 0.9rem; }
     .comparison-table th,
