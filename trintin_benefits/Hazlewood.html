@@ -2471,6 +2471,14 @@ left: 20px;
 <script>
  window.difyChatbotConfig = {
   token: 'f0uBsDEFdBM2wRaN',
+  containerProps: {
+    style: {
+      bottom: '20px',
+      right: '20px',
+      position: 'fixed', // Ensures it scrolls with screen
+      zIndex: 1000 // Ensures it stays on top
+    },
+  },
   inputs: {
     // You can define the inputs from the Start node here
     // key is the variable name
@@ -2492,7 +2500,6 @@ left: 20px;
  id="f0uBsDEFdBM2wRaN"
  defer>
 </script>
-</div>
 <style>
 #dify-chatbot-bubble-button {
     background-color: #F56423 !important;
@@ -2501,11 +2508,6 @@ left: 20px;
     width: 24rem !important;
     height: 40rem !important;
   }
-    .dify-wrapper {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        z-index: 1000;
-  }
 </style>
+</div>
 </body></html>
