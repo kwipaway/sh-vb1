@@ -258,7 +258,7 @@ img { max-width: 100%; display: block; }
 .menu-toggle-btn {
     position: fixed;
     left: 10px;
-    top: 5px;
+    top: 1px;
     z-index: 1000;
     background: transparent;
     border: none;
