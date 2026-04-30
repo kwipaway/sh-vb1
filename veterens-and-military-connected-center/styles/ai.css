@@ -440,3 +440,59 @@ iframe {
     background-color: #555;
 }
 
+/* PEOPLE SECTION */
+.people-section {
+    width: 100%;
+    margin: 0;
+    padding: 70px 0;
+    background: var(--sand);
+}
+
+/* GRID */
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* FIX: make the h1 span across all columns */
+.people-grid h1 {
+    grid-column: 1 / -1; /* full width */
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    color: var(--jade);
+}
+
+/* CARD */
+.person-card {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 30px;
+}
+
+/* NAME */
+.person-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--jade);
+    font-size: 24px;
+}
+
+/* TEXT */
+.person-card p {
+    margin: 8px 0;
+    font-size: 18px;
+    color: #444;
+}
+
+/* EMAIL */
+.person-card a {
+    display: inline-block;
+    margin: 10px 0;
+    color: var(--jade);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
