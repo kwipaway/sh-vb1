@@ -230,6 +230,7 @@
     </script>
 
 <!-- ChatBot Script -->
+<div class="dify-wrapper">
 <script>
  window.difyChatbotConfig = {
   token: 'f0uBsDEFdBM2wRaN',
@@ -254,13 +255,20 @@
  id="f0uBsDEFdBM2wRaN"
  defer>
 </script>
+</div>
 <style>
-  #dify-chatbot-bubble-button {
+#dify-chatbot-bubble-button {
     background-color: #F56423 !important;
   }
   #dify-chatbot-bubble-window {
     width: 24rem !important;
     height: 40rem !important;
+  }
+    .dify-wrapper {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 1000;
   }
 </style>
 
