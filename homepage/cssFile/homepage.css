@@ -1,0 +1,698 @@
+
+/* Global reset for spacing and box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base body typography and background */
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+                 "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    tab-size: 4;
+}
+
+/* =============================================
+   Custom Properties
+   ============================================= */
+:root {
+  --shsu-orange: rgb(245, 100, 35);
+  --shsu-white: rgb(255, 255, 255);
+  --shsu-dark-cyan: rgb(0, 72, 83);
+  --shsu-lime: rgb(163, 210, 55);
+
+  --gray-50: #f5f5f3;
+  --gray-200: #e2e0da;
+  --gray-500: #6b6b6b;
+  --gray-800: #2a2a2a;
+}
+
+img { max-width: 100%; display: block; }
+
+/* =============================================
+   Container
+   ============================================= */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* =============================================
+   Utility Bar
+   ============================================= */
+.util-bar {
+  background: var(--shsu-dark-cyan);
+  padding: 0.45rem 0;
+}
+
+.util-inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.util-bar a {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.util-bar a:hover {
+  color: var(--shsu-white);
+}
+
+.util-btn {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.18rem 0.7rem;
+}
+
+.util-search {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.util-search:hover {
+  color: var(--shsu-white);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* =============================================
+   Site Header
+   ============================================= */
+.site-header {
+  background: var(--shsu-white);
+  border-bottom: 4px solid var(--shsu-orange);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  gap: 1.5rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  color: var(--shsu-orange);
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo-link svg {
+  height: 38px;
+  width: auto;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.45rem 0.7rem;
+  color: var(--shsu-dark-cyan);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-family: gt-america, sans-serif;
+  font-weight: 700;
+  line-height: 1.5rem;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.main-nav a:hover {
+  color: var(--shsu-orange);
+  border-bottom-color: var(--shsu-orange);
+}
+
+.nav-apply {
+  background: var(--shsu-orange) !important;
+  color: var(--shsu-white) !important;
+  border-radius: 4px;
+  padding: 0.35rem 0.85rem !important;
+  margin-left: 0.35rem;
+  border-bottom-color: transparent !important;
+}
+
+.nav-apply:hover {
+  background: var(--shsu-dark-cyan) !important;
+  color: var(--shsu-white) !important;
+  border-bottom-color: transparent !important;
+}
+
+.nav-request {
+  border: 2px solid var(--shsu-dark-cyan) !important;
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem !important;
+  margin-left: 0.25rem;
+  border-bottom-color: var(--shsu-dark-cyan) !important;
+}
+
+.nav-request:hover {
+  background: var(--shsu-dark-cyan);
+  color: var(--shsu-white) !important;
+  border-color: var(--shsu-dark-cyan) !important;
+}
+
+/* =============================================
+   Page Title Section
+   ============================================= */
+.page-title-section {
+  background: var(--shsu-dark-cyan);
+}
+
+.hero-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.page-title-inner {
+  padding: 2.25rem 0 2.75rem;
+}
+
+.page-title {
+  font-family: gt-flexa-compressed, sans-serif;
+  font-size: 3.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 0.8;
+  color: var(--shsu-orange);
+  max-width: 860px;
+}
+
+/* =============================================
+   "Before You Begin" Notice
+   ============================================= */
+.notice-band {
+  background: var(--shsu-white);
+  border-top: none;
+  padding: 2rem 0;
+}
+
+.notice {
+  background: var(--shsu-white);
+  border-left: 6px solid var(--shsu-orange);
+  padding: 1.4rem 1.75rem;
+  box-shadow: 0 4px 18px rgba(0, 72, 83, 0.1);
+  border-radius: 2px;
+}
+
+.notice h3 {
+  font-family: gt-america, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--shsu-dark-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.notice p {
+  font-size: 0.96rem;
+  margin: 0;
+}
+
+
+/* ========================================================================================================
+   HAMBURGER MENU BUTTON & SIDE NAVIGATION WINDOW - All responsive styles for desktop and mobile screens
+   ======================================================================================================== */
+
+/* Hamburger toggle button styling */
+.menu-toggle-btn {
+    position: fixed;
+    left: 10px;
+    top: 1px;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Individual hamburger lines */
+.menu-toggle-btn .hamburger-line {
+    width: 28px;
+    height: 3px;
+    background-color: rgb(245, 100, 35);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger button hover effect */
+.menu-toggle-btn:hover .hamburger-line {
+    width: 32px;
+}
+
+/* Animated hamburger - rotate first line */
+.menu-toggle-btn.active .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+/* Animated hamburger - hide middle line */
+.menu-toggle-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+/* Animated hamburger - rotate last line */
+.menu-toggle-btn.active .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Layout wrapper for sidebar + main content */
+.layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Sticky left sidebar menu */
+.left-menu {
+    width: 280px;
+    flex: none;
+    position: sticky;
+    top: 1.5rem;
+    padding: 1rem 0;
+}
+
+/* Sidebar nav padding */
+.left-menu nav {
+    padding: 0 1rem;
+}
+
+/* Sidebar list styling */
+.left-menu ul { list-style: none; padding: 0; 
+}
+.left-menu ul li { 
+    position: relative;
+    border-bottom: 2px solid rgb(0, 72, 83); 
+}
+
+/* Sidebar link styling */
+.left-menu ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: rgb(0, 72, 83);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Sidebar link hover color */
+.left-menu ul li a:hover { color: #f56423; }
+
+/* Orange dot indicator on hover */
+.left-menu ul li .dot {
+    width: 6px;
+    height: 6px;
+    background: #f56423;
+    border-radius: 50%;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+    transition: transform .18s ease, opacity .18s ease;
+}
+
+/* Show dot on hover */
+.left-menu ul li:hover .dot {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+}
+
+/* Light border utility class */
+.border-b-theme-on-primary {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Main content area */
+.main-content {
+    flex: 1 1 auto;
+}
+.intro-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Paragraph styling inside intro section */
+.intro-section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Benefit overview card styling */
+.benefits-overview {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Section title styling */
+.section-title {
+    font-family: gt-america, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(0, 72, 83);
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid rgb(245, 100, 35);
+    padding-bottom: 0.5rem;
+}
+
+/* Subsection title styling */
+.subsection-title {
+    font-family: gt-america, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(245, 100, 35);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Table layout and styling */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Table header background */
+.comparison-table thead {
+    background-color: rgb(0, 72, 83);
+    color: white;
+}
+
+/* Table header cells */
+.comparison-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 700;
+    border: 1px solid #ddd;
+}
+
+/* Table body cells */
+.comparison-table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+/* Alternating row color */
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Hover highlight */
+.comparison-table tbody tr:hover {
+    background-color: #efefef;
+}
+
+/* Highlighted requirement list box */
+.requirement-list {
+    background: #f9f9f9;
+    border-left: 4px solid rgb(245, 100, 35);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+/* Requirement list title */
+.requirement-list h4 {
+    color: rgb(0, 72, 83);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Requirement list bullets */
+.requirement-list ul {
+    list-style-position: inside;
+    color: #333;
+}
+
+/* Individual requirement spacing */
+.requirement-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Green highlight box */
+.highlight-box {
+    background: rgb(163, 210, 55);
+    color: rgb(0, 72, 83);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    font-weight: 500;
+}
+
+/* Caution box styling */
+.caution-box {
+    background: #fff3cd;
+    border-left: 4px solid #ff6600;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+/* Bold caution text */
+.caution-box strong {
+    color: rgb(245, 100, 35);
+}
+
+/* Grid layout for info cards */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Individual info card styling */
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 4px solid rgb(245, 100, 35);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Info card title */
+.info-card h3 {
+    color: rgb(0, 72, 83);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Info card text */
+.info-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+
+
+/* Footer styling */
+footer {
+    background-color: rgb(0, 72, 83);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Small italic note text */
+.note {
+    font-style: italic;
+    color: #666;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+/* Scroll indicator base styling (hidden by default) */
+.scroll-indicator,
+.scroll-indicator-top,
+.scroll-indicator-bottom {
+    display: none;
+    text-align: center;
+    padding: 1.5rem 0;
+    color: rgb(0, 72, 83);
+    font-weight: 500;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Scroll arrow animation */
+.scroll-arrows {
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Individual arrow animation */
+.arrow {
+    display: inline-block;
+    animation: bounce 2s infinite;
+    margin: 0 0.25rem;
+}
+
+/* Arrow animation delays */
+.arrow:nth-child(2) { animation-delay: 0.2s; }
+.arrow:nth-child(3) { animation-delay: 0.4s; }
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-10px); opacity: 0.7; }
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Show top scroll indicator on short screens */
+@media (max-height: 700px) {
+    .scroll-indicator-top { display: block; }
+}
+
+/* Show bottom scroll indicator on medium-height screens */
+@media (min-height: 700px) and (max-height: 1000px) {
+    .scroll-indicator-bottom { display: block; }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    .page-title { font-size: 2.5rem; }
+    .section-title { font-size: 1.5rem; }
+    .comparison-table { font-size: 0.9rem; }
+    .comparison-table th,
+    .comparison-table td { padding: 0.75rem 0.5rem; }
+}
+
+/* Desktop behavior: Menu collapses in place */
+@media (min-width: 769px) {
+    /* Collapsed state for left menu on desktop */
+    .left-menu.collapsed {
+        width: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    /* Expanded state for left menu on desktop */
+    .left-menu {
+        width: 280px;
+        opacity: 1;
+        overflow: visible;
+        transition: all 0.3s ease;
+    }
+
+    /* Layout adjustment when menu is collapsed on desktop */
+    .layout.menu-collapsed {
+        margin-left: 0;
+    }
+}
+
+/* Mobile behavior: Menu slides in from left */
+@media (max-width: 768px) {
+    /* Mobile menu starts off-screen to the left */
+    .left-menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 280px;
+        height: 100vh;
+        background: white;
+        z-index: 999;
+        overflow-y: auto;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        opacity: 1;
+        padding-top: 60px;
+    }
+
+    /* Mobile menu slides in when not collapsed */
+    .left-menu:not(.collapsed) {
+        transform: translateX(0);
+    }
+
+    /* Mobile menu hidden when collapsed */
+    .left-menu.collapsed {
+        transform: translateX(-100%);
+        width: 280px;
+        opacity: 1;
+        overflow: hidden;
+    }
+
+    /* Semi-transparent overlay when mobile menu is open */
+    .layout:has(.left-menu:not(.collapsed))::before {
+        content: '';
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 500;
+    }
+}
+
+/* ========================================================================================================
+   END OF HAMBURGER MENU BUTTON & SIDE NAVIGATION WINDOW
+   ======================================================================================================== */
+
