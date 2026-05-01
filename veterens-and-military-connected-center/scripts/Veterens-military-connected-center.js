@@ -1,6 +1,6 @@
-document.getElementById("VMCC").addEventListener("click", function(event) {
+document.getElementById("pop-up").addEventListener("click", function(event) {
     event.preventDefault();
-  const shouldNavigate = confirm("You are leaving Veterans and Military Connected Center page. This is an external site. Continue?");
+  const shouldNavigate = confirm("You are leaving Main page. This is an external site. Continue?");
   if (shouldNavigate) {
     window.location.href = event.target.href;
   }
