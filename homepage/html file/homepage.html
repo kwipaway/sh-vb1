@@ -33,7 +33,6 @@
         ========================================== -->
     <header class="site-header">
     <div class="container header-inner">
-
         <!-- SHSU Logo — inline SVG wordmark -->
         <a href="#" aria-label="Sam Houston State University home" class="logo-link">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="42" viewBox="0 0 209 42" width="209" aria-hidden="true">
@@ -68,7 +67,10 @@
             <path d="M180.196 40.8386C179.886 40.8386 179.761 40.5941 179.886 40.3495L181.377 37.7207C181.688 37.2316 181.688 36.8037 181.502 36.3146L179.45 30.9347C179.202 30.2622 179.015 30.0176 178.705 29.8954L178.394 29.7731C178.207 29.712 178.083 29.5897 178.083 29.3451V29.2229C178.083 28.9783 178.207 28.7949 178.518 28.7949H179.948C180.196 28.7949 180.383 28.9172 180.445 29.1006L182.558 34.9085C182.558 35.0307 182.683 35.0307 182.745 34.9085L184.61 30.2622C184.672 30.0176 184.61 29.8954 184.423 29.8342L183.988 29.712C183.802 29.6508 183.739 29.5285 183.739 29.3451V29.2229C183.739 28.9783 183.864 28.7949 184.174 28.7949H186.474C186.723 28.7949 186.909 28.9172 186.909 29.2229V29.3451C186.909 29.5285 186.847 29.5897 186.661 29.712L186.35 29.8342C186.039 30.0176 185.915 30.201 185.604 30.8735L181.564 40.4106C181.44 40.6552 181.315 40.7163 181.129 40.7163H180.196V40.8386Z"/>
         </svg>
         </a>
-
+        <button class="sidebar-toggle-btn1" id="sidebarToggleBtn1" aria-expanded="true" type="button">
+          <span class="sidebar-toggle-icon" aria-hidden="true">☰</span>
+        </button>
+        
         <!-- Main navigation -->
         <nav class="main-nav" aria-label="Main navigation">
         <ul>
@@ -112,32 +114,39 @@
     <!-- ==========================================
     Two-Column Layout: Sidebar + Main
     ========================================== -->
+<div class="container layout-wrapper">
     <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-expanded="true" type="button">
-          <span class="sidebar-toggle-icon" aria-hidden="true">☰</span>
+        <span class="sidebar-toggle-icon" aria-hidden="true">☰</span>
     </button>
-    <div class="container layout-wrapper">
-      <div class="layout">
 
-        <!-- Left sidebar navigation -->
-        <aside>
-          <nav class="sidebar-nav" aria-label="Section navigation">
-            <ul class="sidebar-list">
-              <li><a href="homepage.html" class="active">Veterans Benefits Processing</a></li>
-              <li><a href="../../Active Duty/index.html" >Active Duty Students</a></li>
-              <li class="benefits-submenu" data-expanded="false">
-                <a href="#" class="benefits-toggle">Benefits <span class="flyout-indicator" aria-hidden="true">›</span></a>
-                <ul class="benefits-flyout" aria-label="Benefits submenu">
-                  <li><a href="../../trintin_benefits/benefits_page.html">Hazlewood</a></li>
-                  <li><a href="../../trintin_benefits/Federal Benefits.html">Federal Benefits</a></li>
+    <div class="layout">
+
+        <!-- NEW sticky wrapper -->
+        <div class="sidebar-wrapper">
+            <nav class="sidebar-nav" aria-label="Section navigation">
+                <ul class="sidebar-list">
+                    <li><a href="homepage.html" class="active">Veterans Benefits Processing</a></li>
+                    <li><a href="../../Active Duty/index.html">Active Duty Students</a></li>
+
+                    <li class="benefits-submenu" data-expanded="false">
+                        <a href="#" class="benefits-toggle">
+                            Benefits <span class="flyout-indicator" aria-hidden="true">›</span>
+                        </a>
+                        <ul class="benefits-flyout" aria-label="Benefits submenu">
+                            <li><a href="../../trintin_benefits/benefits_page.html">Hazlewood</a></li>
+                            <li><a href="../../trintin_benefits/Federal Benefits.html">Federal Benefits</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="../../veterens-and-military-connected-center/files/Veterens-military-connected-center.html" target="_blank">Veterans & Military Connected Center</a></li>
+                    <li><a href="../../contacts.html" target="_parent">Contact Us</a></li>
                 </ul>
-              </li>
-              <li><a href="../../veterens-and-military-connected-center/files/Veterens-military-connected-center.html" target="_blank">Veterans &amp; Military Connected Center</a></li>
-              <li><a href="../../contacts.html" target="_parent">Contact Us</a></li>
-            </ul>
-          </nav>
-        </aside>
-                
-                <div class="main-content">    
+            </nav>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            
     <!-- Main Page Information/Documentation -->
     <section class="wysiwyg theme-white bg-theme-primary text-theme-on-primary appear @container/section" id="wysiwyg-1">
         <div class="benefits-overview">
@@ -181,26 +190,31 @@
     </footer>
 
     <script>
-        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+        const toggleButtons = [
+            document.getElementById('sidebarToggleBtn'),
+            document.getElementById('sidebarToggleBtn1')
+        ].filter(Boolean); // removes nulls if one button doesn't exist
+
         const layoutElement = document.querySelector('.layout');
-        const sidebarToggleLabel = sidebarToggleBtn?.querySelector('.sidebar-toggle-label');
         const benefitsToggle = document.querySelector('.benefits-toggle');
         const benefitsSubmenu = document.querySelector('.benefits-submenu');
 
-        sidebarToggleBtn?.addEventListener('click', function() {
-            const collapsed = layoutElement.classList.toggle('menu-collapsed');
-            this.setAttribute('aria-expanded', String(!collapsed));
-            if (sidebarToggleLabel) {
-                sidebarToggleLabel.textContent = collapsed ? 'Show menu' : 'Hide menu';
-            }
+        // Handle BOTH toggle buttons
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const collapsed = layoutElement.classList.toggle('menu-collapsed');
+                toggleButtons.forEach(b => b.setAttribute('aria-expanded', String(!collapsed)));
+            });
         });
 
+        // Benefits submenu logic stays the same
         benefitsToggle?.addEventListener('click', function(e) {
             e.preventDefault();
             const isExpanded = benefitsSubmenu.getAttribute('data-expanded') === 'true';
             benefitsSubmenu.setAttribute('data-expanded', String(!isExpanded));
         });
     </script>
+
 
 <!-- ChatBot Script -->
 <div class="dify-wrapper">
