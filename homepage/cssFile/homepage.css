@@ -1,12 +1,13 @@
 
-/* Global reset for spacing and box model */
+/* =============================================
+   Reset & Base Styles
+   ============================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Base body typography and background */
 body {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
                  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -18,8 +19,10 @@ body {
     tab-size: 4;
 }
 
+img { max-width: 100%; display: block; }
+
 /* =============================================
-   Custom Properties
+   Custom Properties & Container
    ============================================= */
 :root {
   --shsu-orange: rgb(245, 100, 35);
@@ -33,11 +36,6 @@ body {
   --gray-800: #2a2a2a;
 }
 
-img { max-width: 100%; display: block; }
-
-/* =============================================
-   Container
-   ============================================= */
 .container {
   max-width: 1180px;
   margin: 0 auto;
@@ -118,6 +116,7 @@ img { max-width: 100%; display: block; }
   padding-top: 0.85rem;
   padding-bottom: 0.85rem;
   gap: 1.5rem;
+  position: relative;
 }
 
 .logo-link {
@@ -254,114 +253,219 @@ img { max-width: 100%; display: block; }
    HAMBURGER MENU BUTTON & SIDE NAVIGATION WINDOW - All responsive styles for desktop and mobile screens
    ======================================================================================================== */
 
-/* Hamburger toggle button styling */
-.menu-toggle-btn {
-    position: fixed;
-    left: 10px;
-    top: 1px;
-    z-index: 1000;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    gap: 6px;
-    transition: all 0.3s ease;
+/* =============================================
+   Layout: Sidebar + Main
+   ============================================= */
+.layout-wrapper {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
 }
 
-/* Individual hamburger lines */
-.menu-toggle-btn .hamburger-line {
-    width: 28px;
-    height: 3px;
-    background-color: rgb(245, 100, 35);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Hamburger button hover effect */
-.menu-toggle-btn:hover .hamburger-line {
-    width: 32px;
-}
-
-/* Animated hamburger - rotate first line */
-.menu-toggle-btn.active .hamburger-line:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-/* Animated hamburger - hide middle line */
-.menu-toggle-btn.active .hamburger-line:nth-child(2) {
-    opacity: 0;
-}
-
-/* Animated hamburger - rotate last line */
-.menu-toggle-btn.active .hamburger-line:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-/* Layout wrapper for sidebar + main content */
-.layout {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-}
-
-/* Sticky left sidebar menu */
-.left-menu {
-    width: 280px;
-    flex: none;
+.sidebar-toggle-btn {
     position: sticky;
-    top: 1.5rem;
-    padding: 1rem 0;
-}
-
-/* Sidebar nav padding */
-.left-menu nav {
-    padding: 0 1rem;
-}
-
-/* Sidebar list styling */
-.left-menu ul { list-style: none; padding: 0; 
-}
-.left-menu ul li { 
-    position: relative;
-    border-bottom: 2px solid rgb(0, 72, 83); 
-}
-
-/* Sidebar link styling */
-.left-menu ul li a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: rgb(0, 72, 83);
-    text-decoration: none;
+    top: 6em;
+    left: 1rem;
+    z-index: 1200;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.9rem;
+    border: none;
+    border-radius: 4px;
+    background: var(--shsu-orange);
+    color: var(--shsu-white);
+    font-family: gt-america, sans-serif;
+    font-size: 0.85rem;
     font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(245, 100, 35, 0.25);
+    transition: all 0.2s ease;
 }
 
-/* Sidebar link hover color */
-.left-menu ul li a:hover { color: #f56423; }
+.sidebar-toggle-btn:hover {
+    background: rgb(225, 90, 20);
+    box-shadow: 0 4px 12px rgba(245, 100, 35, 0.35);
+}
 
-/* Orange dot indicator on hover */
-.left-menu ul li .dot {
-    width: 6px;
-    height: 6px;
-    background: #f56423;
-    border-radius: 50%;
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%) scale(0);
+.sidebar-toggle-btn:active {
+    transform: scale(0.98);
+}
+
+.sidebar-toggle-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 255px 1fr;
+    gap: 3rem;
+    align-items: start;
+    transition: grid-template-columns 0.3s ease;
+}
+
+.layout.menu-collapsed {
+    grid-template-columns: 0 1fr;
+}
+
+.layout.menu-collapsed .sidebar-nav {
     opacity: 0;
-    transition: transform .18s ease, opacity .18s ease;
+    pointer-events: none;
+    width: 0;
+    min-width: 0;
+    transform: translateX(-100%);
 }
 
-/* Show dot on hover */
-.left-menu ul li:hover .dot {
-    transform: translateY(-50%) scale(1);
-    opacity: 1;
+.layout.menu-collapsed aside {
+    min-width: 0;
+}
+
+/* =============================================
+   Sidebar Navigation
+   ============================================= */
+.sidebar-nav {
+    position: sticky;
+    top: 80px;
+    background: var(--shsu-white);
+    border: 1px solid var(--gray-200);
+    border-radius: 3px;
+    overflow: visible;
+}
+
+.sidebar-list {
+    list-style: none;
+}
+
+.sidebar-list > li {
+    border-bottom: 1px solid var(--gray-200);
+    position: relative;
+}
+
+.sidebar-list > li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-list > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.78rem 1rem;
+    color: var(--shsu-dark-cyan);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-left: 3px solid transparent;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.sidebar-list > li > a:hover {
+    background: var(--gray-50);
+    border-left-color: var(--shsu-orange);
+}
+
+.sidebar-list > li > a.active {
+    background: var(--gray-50);
+    border-left-color: var(--shsu-orange);
+    font-family: gt-america, sans-serif;
+    font-weight: 700;
+}
+
+.flyout-indicator {
+    font-size: 1.05rem;
+    color: var(--gray-500);
+    line-height: 1;
+}
+
+/* Flyout submenu — pure CSS :hover */
+.has-flyout .flyout {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 175px;
+    list-style: none;
+    background: var(--shsu-white);
+    border: 1px solid var(--gray-200);
+    border-left: 3px solid var(--shsu-orange);
+    border-radius: 0 3px 3px 0;
+    box-shadow: 6px 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+}
+
+.has-flyout:hover .flyout {
+    display: block;
+}
+
+/* Benefits accordion submenu — appears inline and pushes items down */
+.benefits-flyout {
+    display: none;
+    list-style: none;
+    background: var(--gray-50);
+    border-left: 3px solid var(--shsu-orange);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+
+.benefits-submenu[data-expanded="true"] .benefits-flyout {
+    display: block;
+    max-height: 500px;
+}
+
+.benefits-flyout li {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.benefits-flyout li:last-child {
+    border-bottom: none;
+}
+
+.benefits-flyout li a {
+    display: block;
+    padding: 0.65rem 1rem;
+    padding-left: 1.5rem;
+    color: var(--shsu-dark-cyan);
+    text-decoration: none;
+    font-size: 0.87rem;
+    border-left: none;
+    transition: background 0.15s, color 0.15s;
+}
+
+.benefits-flyout li a:hover {
+    background: var(--gray-200);
+    color: var(--shsu-orange);
+}
+
+.benefits-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+.benefits-submenu[data-expanded="true"] .flyout-indicator {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.has-flyout .flyout li a {
+    display: block;
+    padding: 0.65rem 1rem;
+    color: var(--shsu-dark-cyan);
+    text-decoration: none;
+    font-size: 0.87rem;
+    border-bottom: 1px solid var(--gray-200);
+    border-left: none;
+    transition: background 0.15s, color 0.15s;
+}
+
+.has-flyout .flyout li:last-child a {
+    border-bottom: none;
+}
+
+.has-flyout .flyout li a:hover {
+    background: var(--gray-50);
+    color: var(--shsu-orange);
 }
 
 /* Light border utility class */
@@ -373,6 +477,8 @@ img { max-width: 100%; display: block; }
 .main-content {
     flex: 1 1 auto;
 }
+
+/* Intro section styling */
 .intro-section {
     background: white;
     padding: 2rem;
@@ -542,8 +648,9 @@ img { max-width: 100%; display: block; }
 }
 
 
-
-/* Footer styling */
+/* =============================================
+   Footer
+   ============================================= */
 footer {
     background-color: rgb(0, 72, 83);
     color: white;
@@ -553,7 +660,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Small italic note text */
 .note {
     font-style: italic;
     color: #666;
@@ -561,6 +667,11 @@ footer {
     padding-top: 1rem;
     border-top: 1px solid #ddd;
 }
+
+
+/* =============================================
+   Animations & Utility Classes
+   ============================================= */
 
 /* Scroll indicator base styling (hidden by default) */
 .scroll-indicator,
@@ -614,6 +725,11 @@ footer {
     .scroll-indicator-bottom { display: block; }
 }
 
+
+/* =============================================
+   Responsive Media Queries
+   ============================================= */
+
 /* Responsive adjustments for small screens */
 @media (max-width: 768px) {
     .page-title { font-size: 2.5rem; }
@@ -621,74 +737,82 @@ footer {
     .comparison-table { font-size: 0.9rem; }
     .comparison-table th,
     .comparison-table td { padding: 0.75rem 0.5rem; }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .header-inner {
+        justify-content: space-between;
+    }
 }
 
-/* Desktop behavior: Menu collapses in place */
+/* Desktop behavior: Full grid layout on larger screens */
 @media (min-width: 769px) {
-    /* Collapsed state for left menu on desktop */
-    .left-menu.collapsed {
-        width: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: all 0.3s ease;
+    .layout {
+        display: grid;
+        grid-template-columns: 255px 1fr;
+        gap: 3rem;
+        align-items: start;
     }
 
-    /* Expanded state for left menu on desktop */
-    .left-menu {
-        width: 280px;
-        opacity: 1;
-        overflow: visible;
-        transition: all 0.3s ease;
+    .sidebar-nav {
+        display: block;
+        position:sticky;
+        top: 80px;
     }
+}
 
-    /* Layout adjustment when menu is collapsed on desktop */
-    .layout.menu-collapsed {
+/* Mobile behavior: Single column layout */
+@media (max-width: 768px) {
+    .layout {
+        display: block;
         margin-left: 0;
     }
-}
 
-/* Mobile behavior: Menu slides in from left */
-@media (max-width: 768px) {
-    /* Mobile menu starts off-screen to the left */
-    .left-menu {
+    .sidebar-toggle-btn {
         position: fixed;
-        left: 0;
+        top: 1rem;
+        right: 1rem;
+        left: auto ;
+        z-index: 1200;
+        padding: 0.6rem 0.85rem;
+        font-size: 0.8rem;
+        box-shadow: 0 2px 6px rgba(245, 100, 35, 0.2);
+        transition: all 0.35s ease;
+    }
+
+    .sidebar-toggle-btn:hover {
+        box-shadow: 0 3px 8px rgba(245, 100, 35, 0.3);
+    }
+
+    .sidebar-nav {
+        position: fixed;
+        right: 0;
         top: 0;
-        width: 280px;
-        height: 100vh;
-        background: white;
-        z-index: 999;
+        bottom: 0;
+        width: 260px;
+        background: var(--shsu-white);
+        z-index: 1150;
         overflow-y: auto;
-        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        opacity: 1;
-        padding-top: 60px;
-    }
-
-    /* Mobile menu slides in when not collapsed */
-    .left-menu:not(.collapsed) {
+        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.16);
         transform: translateX(0);
+        transition: transform 0.35s ease;
+        border: 1px solid var(--gray-200);
+        border-radius: 0 0 0 0;
+        padding-top: 5rem;
     }
 
-    /* Mobile menu hidden when collapsed */
-    .left-menu.collapsed {
-        transform: translateX(-100%);
-        width: 280px;
-        opacity: 1;
-        overflow: hidden;
+    .layout.menu-collapsed .sidebar-nav {
+        transform: translateX(100%);
     }
 
-    /* Semi-transparent overlay when mobile menu is open */
-    .layout:has(.left-menu:not(.collapsed))::before {
-        content: '';
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 500;
+    .layout.menu-collapsed .main-content {
+        margin-top: 0;
+    }
+
+    .main-content {
+        padding-top: 5rem;
     }
 }
 

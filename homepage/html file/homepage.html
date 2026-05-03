@@ -108,51 +108,34 @@
         </div>
     </div>
     </div>
-    
-    <!-- Hamburger Menu Toggle Button -->
-    <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Toggle menu" title="Toggle menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-    </button>
 
-    <!-- Side Navigation Window -->
-    <div class="container">
-        <section class="">
-        <div class=" mt-8 md:mt-16 md:container">
-            <div class="layout" id="layout">
-                <aside class="left-menu @container/section" id="leftMenu">
-                    <nav x-data="sideNavigation()"
-                        class="@[100cqw]/section:container relative md:mt-20">
-                        <ul class="space-y-3.5 pb-6">
-                            <li x-data="{subMenuOpen: true}" class="border-b border-b-theme-on-primary">
-                                <a class="text-l4 inline-block py-2.5 w-full transition-colors duration-300 text-theme-on-primary group text-balance font-black" href="homepage.html"> Veterans Benefits Processing
-                                    <span class="dot" aria-hidden="true"></span>
-                                </a>
-                            </li>
-                            <li x-data="{subMenuOpen: true}" class="border-b border-b-theme-on-primary">
-                                <a class="text-l4 inline-block py-2.5 w-full transition-colors duration-300 text-theme-on-primary group text-balance" href="../../Active Duty/index.html">Active Duty Students
-                                    <span class="dot" aria-hidden="true"></span>
-                                </a>
-                            </li>
-                            <li x-data="{subMenuOpen: true}" class="border-b border-b-theme-on-primary">
-                                <a class="text-l4 inline-block py-2.5 w-full transition-colors duration-300 text-theme-on-primary group text-balance" href="../../trintin_benefits/benefits_page.html" target="_parent">Benefits
-                                    <span class="dot" aria-hidden="true"></span>
-                                </a>
-                            </li>
-                            <li x-data="{subMenuOpen: true}" class="border-b border-b-theme-on-primary">
-                                <a class="text-l4 inline-block py-2.5 w-full transition-colors duration-300 text-theme-on-primary group text-balance" href="../../veterens-and-military-connected-center/files/Veterens-military-connected-center.html" target="_blank" id="pop-up">Veterans and Military Connected Center ↗
-                                    <span class="dot" aria-hidden="true"></span>
-                                </a>
-                            </li>
-                            <li x-data="{subMenuOpen: true}" class="border-b border-b-theme-on-primary">
-                                <a class="text-l4 inline-block py-2.5 w-full transition-colors duration-300 text-theme-on-primary group text-balance" href="../../contacts.html" target="_parent">Contact Us
-                                    <span class="dot" aria-hidden="true"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </aside>
+    <!-- ==========================================
+    Two-Column Layout: Sidebar + Main
+    ========================================== -->
+    <div class="container layout-wrapper">
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-expanded="true" type="button">
+          <span class="sidebar-toggle-icon" aria-hidden="true">☰</span>
+      </button>
+      <div class="layout">
+
+        <!-- Left sidebar navigation -->
+        <aside>
+          <nav class="sidebar-nav" aria-label="Section navigation">
+            <ul class="sidebar-list">
+              <li><a href="homepage.html" class="active">Veterans Benefits Processing</a></li>
+              <li><a href="../../Active Duty/index.html" >Active Duty Students</a></li>
+              <li class="benefits-submenu" data-expanded="false">
+                <a href="#" class="benefits-toggle">Benefits <span class="flyout-indicator" aria-hidden="true">›</span></a>
+                <ul class="benefits-flyout" aria-label="Benefits submenu">
+                  <li><a href="../../trintin_benefits/benefits_page.html">Hazlewood</a></li>
+                  <li><a href="../../trintin_benefits/Federal Benefits.html">Federal Benefits</a></li>
+                </ul>
+              </li>
+              <li><a href="../../veterens-and-military-connected-center/files/Veterens-military-connected-center.html" target="_blank">Veterans &amp; Military Connected Center</a></li>
+              <li><a href="../../contacts.html" target="_parent">Contact Us</a></li>
+            </ul>
+          </nav>
+        </aside>
                 
                 <div class="main-content">    
     <!-- Main Page Information/Documentation -->
@@ -198,34 +181,24 @@
     </footer>
 
     <script>
-        // Menu toggle functionality
-        const menuToggleBtn = document.getElementById('menuToggleBtn');
-        const leftMenu = document.getElementById('leftMenu');
-        const layout = document.getElementById('layout');
+        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+        const layoutElement = document.querySelector('.layout');
+        const sidebarToggleLabel = sidebarToggleBtn?.querySelector('.sidebar-toggle-label');
+        const benefitsToggle = document.querySelector('.benefits-toggle');
+        const benefitsSubmenu = document.querySelector('.benefits-submenu');
 
-        menuToggleBtn.addEventListener('click', function() {
-            // Toggle the active class on button
-            menuToggleBtn.classList.toggle('active');
-            
-            // Toggle the collapsed class on menu
-            leftMenu.classList.toggle('collapsed');
-            
-            // Toggle the menu-collapsed class on layout
-            layout.classList.toggle('menu-collapsed');
-            
-            // Save the state to localStorage so it persists on page reload
-            const isCollapsed = leftMenu.classList.contains('collapsed');
-            localStorage.setItem('menuCollapsed', isCollapsed);
+        sidebarToggleBtn?.addEventListener('click', function() {
+            const collapsed = layoutElement.classList.toggle('menu-collapsed');
+            this.setAttribute('aria-expanded', String(!collapsed));
+            if (sidebarToggleLabel) {
+                sidebarToggleLabel.textContent = collapsed ? 'Show menu' : 'Hide menu';
+            }
         });
 
-        // On page load, check if menu was previously collapsed
-        window.addEventListener('DOMContentLoaded', function() {
-            const wasCollapsed = localStorage.getItem('menuCollapsed') === 'true';
-            if (wasCollapsed) {
-                menuToggleBtn.classList.add('active');
-                leftMenu.classList.add('collapsed');
-                layout.classList.add('menu-collapsed');
-            }
+        benefitsToggle?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isExpanded = benefitsSubmenu.getAttribute('data-expanded') === 'true';
+            benefitsSubmenu.setAttribute('data-expanded', String(!isExpanded));
         });
     </script>
 
@@ -259,17 +232,20 @@
 <style>
 #dify-chatbot-bubble-button {
     background-color: #F56423 !important;
-  }
-  #dify-chatbot-bubble-window {
+}
+#dify-chatbot-bubble-window {
     width: 24rem !important;
     height: 40rem !important;
-  }
-    .dify-wrapper {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        z-index: 1000;
-  }
+    position: fixed !important;
+    bottom: 70px !important;
+    right: 20px !important;
+}
+.dify-wrapper {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+}
 </style>
-<script src="../../veterens-and-military-connected-center/scripts/Veterens-military-connected-center.js"></script>
+
 </body></html>
