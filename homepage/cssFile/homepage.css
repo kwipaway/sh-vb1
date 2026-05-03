@@ -314,7 +314,6 @@ img { max-width: 100%; display: block; }
     pointer-events: none;
     width: 0;
     min-width: 0;
-    transform: translateX(-100%);
 }
 
 .layout.menu-collapsed aside {
@@ -326,7 +325,7 @@ img { max-width: 100%; display: block; }
    ============================================= */
 .sidebar-nav {
     position: sticky;
-    top: 80px;
+    top: 2rem;
     background: var(--shsu-white);
     border: 1px solid var(--gray-200);
     border-radius: 3px;
@@ -767,14 +766,16 @@ footer {
 @media (max-width: 768px) {
     .layout {
         display: block;
-        margin-left: 0;
+        margin-left: auto;
     }
 
     .sidebar-toggle-btn {
-        position: fixed;
+        position: sticky;
         top: 1rem;
         right: 1rem;
         left: auto ;
+        display: block;
+        margin-left: auto;
         z-index: 1200;
         padding: 0.6rem 0.85rem;
         font-size: 0.8rem;
