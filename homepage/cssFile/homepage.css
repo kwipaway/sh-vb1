@@ -855,3 +855,72 @@ footer {
    END OF HAMBURGER MENU BUTTON & SIDE NAVIGATION WINDOW
    ======================================================================================================== */
 
+/* ========================================================================================================
+   CSS for Pop Up Exiting Website  
+   ======================================================================================================== */   
+.external-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+}
+
+.external-modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    border-left: 6px solid var(--shsu-orange);
+}
+
+.external-modal-content h2 {
+    color: var(--shsu-dark-cyan);
+    margin-bottom: 1rem;
+}
+
+.countdown-text {
+    margin: 1rem 0;
+    font-weight: 600;
+    color: var(--shsu-dark-cyan);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-continue {
+    background: var(--shsu-orange);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-cancel {
+    background: #ccc;
+    color: #333;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-continue:hover {
+    background: rgb(225, 90, 20);
+}
+
+.modal-cancel:hover {
+    background: #b5b5b5;
+}

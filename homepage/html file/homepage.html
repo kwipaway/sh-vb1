@@ -180,11 +180,75 @@
         </div>
         </section>
     </div>
-    
+    <!-- External Pop-up Site Warning  -->
+    <div id="externalModal" class="external-modal">
+        <div class="external-modal-content">
+            <h2>You are leaving Veterans Benefits Processing</h2>
+            <p>This is an external site. Continue?</p>
+
+            <p class="countdown-text">
+                Redirecting in <span id="countdown">10</span> seconds...
+            </p>
+
+            <div class="modal-buttons">
+                <button id="continueBtn" class="modal-continue">Continue</button>
+                <button id="cancelBtn" class="modal-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>© 2026 Sam Houston State University Veterans Benefits Processing. Test Website</p>
         <p>For more information, visit us at the Veterans Benefits Processing Office or contact us through our website.</p>
     </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const externalLink = document.querySelector(
+            'a[href*="Veterens-military-connected-center.html"]'
+        );
+
+        const modal = document.getElementById("externalModal");
+        const continueBtn = document.getElementById("continueBtn");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const countdownEl = document.getElementById("countdown");
+
+        let countdown = 10;
+        let timer;
+
+        const externalURL = "../../veterens-and-military-connected-center/files/Veterens-military-connected-center.html";
+
+        externalLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            modal.style.display = "flex";
+
+            countdown = 10;
+            countdownEl.textContent = countdown;
+
+            timer = setInterval(() => {
+                countdown--;
+                countdownEl.textContent = countdown;
+
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    window.location.href = externalURL;
+                }
+            }, 1000);
+        });
+
+        continueBtn.addEventListener("click", () => {
+            clearInterval(timer);
+            window.location.href = externalURL;
+        });
+
+        cancelBtn.addEventListener("click", () => {
+            clearInterval(timer);
+            modal.style.display = "none";
+        });
+
+    });
+    </script>
 
     <script>
         const toggleButtons = [
