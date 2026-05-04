@@ -625,6 +625,13 @@ footer {
     .comparison-table th,
     .comparison-table td { padding: 0.75rem 0.5rem; }
 
+    .layout {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0;
+        width: 100%;
+    }
+
     .main-nav { display: none; }
 
     .sidebar-toggle-btn { display: none; }
@@ -660,6 +667,7 @@ footer {
     }
 
     .main-content {
+        margin: 0 !important;
         padding-top: 5rem;
     }
 }
