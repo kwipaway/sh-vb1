@@ -126,15 +126,7 @@
                 <ul class="sidebar-list">
                     <li><a href="homepage.html" class="active">Veterans Benefits Processing</a></li>
                     <li><a href="../../Active Duty/index.html">Active Duty Students</a></li>
-                    <li class="benefits-submenu" data-expanded="false">
-                        <a href="#" class="benefits-toggle">
-                            Benefits <span class="flyout-indicator" aria-hidden="true">›</span>
-                        </a>
-                        <ul class="benefits-flyout" aria-label="Benefits submenu">
-                            <li><a href="../../trintin_benefits/benefits_page.html">Hazlewood</a></li>
-                            <li><a href="../../trintin_benefits/Federal Benefits.html">Federal Benefits</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="../../trintin_benefits/benefits_page.html">Benefits</a></li>
                     <li><a href="../../veterens-and-military-connected-center/files/Veterens-military-connected-center.html" target="_blank">Veterans & Military Connected Center ↗</a></li>
                     <li><a href="../../contacts.html" target="_parent">Contact Us</a></li>
                 </ul>
@@ -308,6 +300,24 @@
  id="f0uBsDEFdBM2wRaN"
  defer>
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const layout = document.querySelector(".layout");
+
+    // If mobile on page load → collapse menu
+    if (window.innerWidth <= 768) {
+        layout.classList.add("menu-collapsed");
+    }
+
+    // If user resizes from desktop → mobile, collapse it
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 768) {
+            layout.classList.add("menu-collapsed");
+        }
+    });
+});
+</script>
+
 <script>
   // Wait for Dify bubble to exist, then animate once
   window.addEventListener('load', () => {
