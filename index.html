@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterans & Military-Connected Center</title>
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/ai.css">
-
+    <title>Veterans Benefits Processing</title>
+    <link href="homepage/cssFile/homepage.css" rel="stylesheet"/>
 </head>
-
 <body>
-
+    
+    <!-- ==========================================
+        Utility Bar
+        ========================================== -->
     <div class="util-bar">
     <div class="container util-inner">
         <a href="#">About</a>
@@ -27,9 +27,12 @@
         </button>
     </div>
     </div>
-<header class="site-header">
-    <div class="container header-inner">
 
+    <!-- ==========================================
+        Site Header
+        ========================================== -->
+    <header class="site-header">
+    <div class="container header-inner">
         <!-- SHSU Logo — inline SVG wordmark -->
         <a href="#" aria-label="Sam Houston State University home" class="logo-link">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="42" viewBox="0 0 209 42" width="209" aria-hidden="true">
@@ -64,7 +67,10 @@
             <path d="M180.196 40.8386C179.886 40.8386 179.761 40.5941 179.886 40.3495L181.377 37.7207C181.688 37.2316 181.688 36.8037 181.502 36.3146L179.45 30.9347C179.202 30.2622 179.015 30.0176 178.705 29.8954L178.394 29.7731C178.207 29.712 178.083 29.5897 178.083 29.3451V29.2229C178.083 28.9783 178.207 28.7949 178.518 28.7949H179.948C180.196 28.7949 180.383 28.9172 180.445 29.1006L182.558 34.9085C182.558 35.0307 182.683 35.0307 182.745 34.9085L184.61 30.2622C184.672 30.0176 184.61 29.8954 184.423 29.8342L183.988 29.712C183.802 29.6508 183.739 29.5285 183.739 29.3451V29.2229C183.739 28.9783 183.864 28.7949 184.174 28.7949H186.474C186.723 28.7949 186.909 28.9172 186.909 29.2229V29.3451C186.909 29.5285 186.847 29.5897 186.661 29.712L186.35 29.8342C186.039 30.0176 185.915 30.201 185.604 30.8735L181.564 40.4106C181.44 40.6552 181.315 40.7163 181.129 40.7163H180.196V40.8386Z"/>
         </svg>
         </a>
-
+        <button class="sidebar-toggle-btn1" id="sidebarToggleBtn1" aria-expanded="true" type="button">
+          <span class="sidebar-toggle-icon" aria-hidden="true">☰</span>
+        </button>
+        
         <!-- Main navigation -->
         <nav class="main-nav" aria-label="Main navigation">
         <ul>
@@ -81,42 +87,98 @@
     </div>
     </header>
 
-<main>
+    <!-- ==========================================
+        Page Title Section
+        ========================================== -->
+    <section class="page-title-section">
+    <img src="homepage/files/mainphoto.jpeg"
+        alt="Active duty service members"
+        class="hero-image">
+    <div class="container page-title-inner">
+        <h1 class="page-title">Veterans Benefits Processing</h1>
+    </div>
+    </section>
 
-    <section class="hero">
-        <div class="hero-left">
-            <h1>Veterans & Military-Connected Center</h1>
+    <!-- ==========================================
+        "Before You Begin" Notice
+        ========================================== -->
+    <div class="notice-band">
+    <div class="container">
+        <div class="notice">
+        <h3>Before You Begin</h3>
+        <p>SHSU provides an integrated AI assistant that can walk you through the steps of using your Veterans Benefits. Whether you’re unsure where to start, need help understanding Hazlewood or Federal VA benefits, or want guidance on required forms, the assistant can point you in the right direction.</p>
+        </div>
+    </div>
+    </div>
+
+    <!-- ==========================================
+    Sidebar Menu + Button to Toggle Menu
+    ========================================== -->
+<div class="container layout-wrapper">
+    <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-expanded="true" type="button">
+        <span class="sidebar-toggle-icon" aria-hidden="true">☰</span>
+    </button>
+
+    <div class="layout">
+
+        <div class="sidebar-wrapper">
+            <nav class="sidebar-nav" aria-label="Section navigation">
+                <ul class="sidebar-list">
+                    <li><a href="#" class="active">Veterans Benefits Processing</a></li>
+                    <li><a href="Active Duty/index.html">Active Duty Students</a></li>
+                    <li><a href="trintin_benefits/benefits_page_v3.html">Benefits</a></li>
+                    <li><a href="veterens-and-military-connected-center/files/Veterens-military-connected-center.html" target="_blank">Veterans & Military Connected Center ↗</a></li>
+                    <li><a href="contacts.html" target="_parent">Contact Us</a></li>
+                </ul>
+            </nav>
         </div>
 
-        <div class="hero-right">
-            <p>
-                We create a fun, engaging, and unforgettable experience for veteran
-                and military-affiliated students; supporting them every step of the way
-                from their first day to graduation.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#" class="btn">Upcoming Events</a>
-                <a href="#" class="btn">Get Support</a>
+        <!-- Main content -->
+        <div class="main-content">
+            
+    <!-- ==========================================
+     Main Page Information/Documentation 
+     ==========================================-->
+    <section class="wysiwyg theme-white bg-theme-primary text-theme-on-primary appear @container/section" id="wysiwyg-1">
+        <div class="benefits-overview">
+            <h2 class="section-title">Use Your Benefits</h2>
+            <p>Whether you're a veteran, current military member, or eligible dependent, SHSU offers multiple educational benefit options to support your pursuit of higher education. This section provides guidance on how to effectively utilize your benefits for maximum impact on your academic journey.</p>
+            <ul style="margin-left: 1.5rem; line-height: 2;">
+                <li>Fully online document submission system.</li>
+                <li>Step-by-step guiadance on benefit utilization</li>
+                <li>Clear answers to your questions about VA and TVC education benefits.</li>
+                <li>Timely updates and support to ensure you meet deadlines and requirements.</li>
+            </ul>
+            <p>All documents must be submitted through our online certification request system. Documents submitted via email, fax, or mail will not be accepted. ​ </p>
+        </div>
+        
+        <div class="benefits-overview">
+            <h2 class="section-title">Benefit Certification Information</h2>
+            <p>​​We are dedicated to honoring the service of our military-affiliated students by providing unwavering support, expert guidance, and access to the educational benefits they’ve earned.</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Federal Benefits</h3>
+                    <p>​VA (Veterans Affairs) educational benefits are federal benefits earned by a service member or veteran. Benefit entitlement can change due to length of service, discharge characterization, as well as home of record/place of entry. For more information or to see if you qualify visit <a href="https://www.va.gov/education/">the VA website.</a></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Hazlewood Benefits</h3>
+                    <p>Veterans that entered the service with residence or place of entry as Texas, the Lone Star State thanks you for your service with the Hazlewood Act. This Act provides veterans with 150 credit hours to utilize in higher education. Check out more information at <a href="https://tvc.texas.gov/education/hazlewood/">the Texas Veterans Commission website.</a></p>
+                </div>
             </div>
         </div>
     </section>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
 
-    <section class="hero-image">
-        <img src="../images/veterans&military-connected-center-img.webp" alt="Military-connected students at campus event">
-    </section>
-
-    <section class="page-layout">
-        <aside class="side-menu">
-            <h3>Menu</h3>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#people">People</a></li>
-                <li><a href="#getInvolved&giveBack">Get Involved & Give Back</a></li>
-                <li><a href="#VetSuccess-On-Campus">VetSuccess On-Campus</a></li>
-                <!--<li><a href="../../homepage/html file/homepage.html" id="pop-up">Veterans Benefits Processing</a></li>-->
-                <li><a href="../../homepage/html file/homepage.html" target="_blank">Veterans & Military Connected Center ↗</a></li>
-                <div id="externalModal" class="external-modal">
+    <!-- ==========================================
+     External Pop-up Site Warning  
+     ==========================================-->
+    <div id="externalModal" class="external-modal">
         <div class="external-modal-content">
             <h2>You are leaving Veterans Benefits Processing</h2>
             <p>Continue?</p>
@@ -131,6 +193,14 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>© 2026 Sam Houston State University Veterans Benefits Processing. Test Website</p>
+        <p>For more information, visit us at the Veterans Benefits Processing Office or contact us through our website.</p>
+    </footer>
+
+
+
     <!-------------------------------
         External Link Pop-up Warning Script
  ------------------------------>
@@ -138,7 +208,7 @@
     document.addEventListener("DOMContentLoaded", () => {
 
         const externalLink = document.querySelector(
-            'a[href*="../../homepage/html file/homepage.html"]'
+            'a[href*="Veterens-military-connected-center.html"]'
         );
 
         const modal = document.getElementById("externalModal");
@@ -149,7 +219,7 @@
         let countdown = 10;
         let timer;
 
-        const externalURL = "../../homepage/html file/homepage.html";
+        const externalURL = "veterens-and-military-connected-center/files/Veterens-military-connected-center.html";
 
         externalLink.addEventListener("click", (e) => {
             e.preventDefault();
@@ -181,249 +251,141 @@
 
     });
     </script>
-            </ul>
-        </aside>
 
-        <section class="content">
-            <h2>Supporting Your Success Beyond the Uniform</h2>
-            <p>
-                We are here to support SHSU’s veteran and military-affiliated students
-                every step of the way. Whether you need academic support, help navigating
-                campus resources, or just someone to point you in the right direction,
-                we’ve got your back every step of the way.
-            </p>
 
-            <h2>Veteran and Military Support</h2>
-            <p>
-                Explore essential resources, benefits, and opportunities for SHSU's
-                veteran and military-connected students.
-            </p>
+<!-------------------------------
+ Sidebar Menu Toggle Button Desktop + Mobile
+ ------------------------------>
+    <script>
+        const toggleButtons = [
+            document.getElementById('sidebarToggleBtn'),
+            document.getElementById('sidebarToggleBtn1')
+        ].filter(Boolean); // removes nulls if one button doesn't exist
 
-            <div class="info-card">
-                <h3>Get Involved & Give Back</h3>
-                <p>
-                    Support veterans through scholarships or join us at upcoming events
-                    and celebrations.
-                </p>
-            </div>
-        </section>
-    </section>
+        const layoutElement = document.querySelector('.layout');
+        const benefitsToggle = document.querySelector('.benefits-toggle');
+        const benefitsSubmenu = document.querySelector('.benefits-submenu');
 
-    <section class="videos">
+        // Handle BOTH toggle buttons
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const collapsed = layoutElement.classList.toggle('menu-collapsed');
+                toggleButtons.forEach(b => b.setAttribute('aria-expanded', String(!collapsed)));
+            });
+        });
 
-        <div class="video-card">
-            <div class="video-embed">
-            <iframe 
-                src="https://www.youtube.com/embed/usJpk3xcRws"
-                title="James Cash Video"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
-        </div>
-            <div class="video-text">
-                <p>
-                    United States Army Veteran and SHSU student James Cash shares how his journey from military service to campus life shaped his purpose - and how he’s helping fellow veterans find community at Sam Houston State University.
-                </p>
-            </div>
-        </div>
+        // Benefits submenu logic stays the same
+        benefitsToggle?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isExpanded = benefitsSubmenu.getAttribute('data-expanded') === 'true';
+            benefitsSubmenu.setAttribute('data-expanded', String(!isExpanded));
+        });
+    </script>
 
-        <div class="video-card">
+<!-------------------------------
+ Mobile Sidebar Menu Collapsed
+ ------------------------------>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const layout = document.querySelector(".layout");
 
-            <div class="video-embed">
-                <iframe 
-                    src="https://www.youtube.com/embed/siT6VMDPCco"
-                    title="Morgan Luttrell Video"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
-            </div>
+    // If mobile on page load → collapse menu
+    if (window.innerWidth <= 768) {
+        layout.classList.add("menu-collapsed");
+    }
 
-            <div class="video-text">
-                <p>
-                    Morgan Luttrell, SHSU alumnus and U.S. Congressman, shares how his Bearkat education, military career, and passion for service shaped his mission to help others.
-                </p>
-            </div>
-        </div>
-    </section>
+    // If user resizes from desktop → mobile, collapse it
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 768) {
+            layout.classList.add("menu-collapsed");
+        }
+    });
+});
+</script>
 
-    <section class="people-section" id="people">
-    <div class="people-grid">
-        <h1>VETERANS & MILITARY CONNECTED CENTER STAFF</h1>
+<!-- ChatBot Script -->
+<div class="dify-wrapper">
+<script>
+ window.difyChatbotConfig = {
+  token: 'f0uBsDEFdBM2wRaN',
+  inputs: {
+    // You can define the inputs from the Start node here
+    // key is the variable name
+    // e.g.
+    // name: "NAME"
+  },
+  systemVariables: {
+    // user_id: 'YOU CAN DEFINE USER ID HERE',
+    // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+  },
+  userVariables: {
+    // avatar_url: //trintin_benefits/shsuBearkatLogo.svg,
+    // name: 'YOU CAN DEFINE USER NAME HERE',
+  },
+ }
+</script>
+<script
+ src="https://udify.app/embed.min.js"
+ id="f0uBsDEFdBM2wRaN"
+ defer>
+</script>
 
-        <div class="person-card">
-            <h3>Roberta Ardoin</h3>
-            <p>VetSuccess Counselor</p>
-            <p>Veterans & Military-Connected Center</p>
-            <a href="mailto:roberta.ardoin@shsu.edu">roberta.ardoin@shsu.edu</a>
-            <p>294-2263 | LSC | 327C</p>
-        </div>
+<script>
+  // Wait for Dify bubble to exist, then animate once
+  window.addEventListener('load', () => {
+    const MAX_WAIT_MS = 8000; // safety cap
+    const CHECK_INTERVAL_MS = 200;
 
-        <div class="person-card">
-            <h3>Fernando Chavez</h3>
-            <p>VMCC Director</p>
-            <p>Veterans & Military-Connected Center</p>
-            <a href="mailto:chavez@shsu.edu">chavez@shsu.edu</a>
-            <p>294-2642 | LSC | 327F</p>
-        </div>
+    let waited = 0;
+    const intervalId = setInterval(() => {
+      const bubble = document.querySelector('#dify-chatbot-bubble-button');
 
-        <div class="person-card">
-            <h3>Roberto Rodriguez</h3>
-            <p>VMCC Associate Director</p>
-            <p>Veterans & Military-Connected Center</p>
-            <a href="mailto:rjr029@shsu.edu">rjr029@shsu.edu</a>
-            <p>294-2540 | LSC | 327B</p>
-        </div>
+      if (bubble) {
+        bubble.classList.add('dify-bubble-animate');
 
-    </div>
-</section>
+        setTimeout(() => {
+          bubble.classList.remove('dify-bubble-animate');
+        }, 2000);
 
-    <section id="getInvolved&giveBack" class="getInvolved&giveBack">
-        <div class="top_section"></div>
-            <h2>Get Involved & Give Back</h2>
-            <p>
-                Support veterans through scholarships or join us at upcoming events and celebrations.
-            </p>
-        </div>
+        clearInterval(intervalId);
+      }
 
-        <section class="get_invloved-img">
-            <img src="../images/getInvolved&giveBack.webp" alt="get-invloved&give-back-img">
-        </section>
+      waited += CHECK_INTERVAL_MS;
+      if (waited >= MAX_WAIT_MS) {
+        clearInterval(intervalId);
+      }
+    }, CHECK_INTERVAL_MS);
+  });
+</script>
 
-        <div class="info-card">
-            <h3>SUPPORT VETERANS AT SHSU</h3>
-            <p>
-                Join the Friends of the VMCC by donating to scholarships that directly support student veterans.
-                 Every gift helps a Bearkat reach their goals.
-            </p>
+</div>
+<style>
+#dify-chatbot-bubble-button {
+    background-color: #F56423 !important;
+}
+#dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+    position: fixed !important;
+    bottom: 70px !important;
+    right: 20px !important;
+}
+.dify-wrapper {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+}
+/* Chatbot Attention Animation */
+@keyframes difyPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(245, 100, 35, 0.0); }
+    50% { transform: scale(1.12); box-shadow: 0 0 18px rgba(245, 100, 35, 0.55); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(245, 100, 35, 0.0); }
+}
 
-            <a href="#" class="btn">Donate Now</a>
-        </div>
+.dify-bubble-animate {
+    animation: difyPulse 0.6s ease-in-out 3; /* 3 pulses = ~2 seconds */
+}
+</style>
 
-        <div class="info-card">
-            <h3>VETERAN & MILITARY EVENTS</h3>
-            <p>
-                Celebrate and support SHSU’s military-connected community through events like Veterans Week and Military-Connected Week.
-            </p>
-
-            <a href="#" class="btn">View Events</a>
-            <a href="#" class="btn">Military-Connected</a>
-        </div>
-
-    </section>
-
-    <section class="VetSuccess-On-Campus" id="VetSuccess-On-Campus">
-        <div class="top-section">
-            <h2>VETSUCCESS ON-CAMPUS</h2>
-            <p>SHSU partners with the VA to provide a dedicated VetSuccess counselor
-                on-campus—get one‑on‑one help managing your benefits, academic planning, and career success
-            </p>
-
-            <a href="#" class="btn">MAKE AN APPOINTMENT</a>
-        </div>
-        <div class="VETSUCCESS SUPPORT SERVICES">
-            <div class="service-card">
-                <nav>
-                    <li class="has-submenu">
-                            <a href="#">VETSUCCESS SUPPORT SERVICES</a>
-                                <ul class="submenu">
-                                    <p>
-                                        Get help understanding and managing your VA education benefits
-                                    </p>   
-                                </ul>
-                        </li>
-                        <li class="has-submenu">
-                            <a href="#">VA BENEFITS & VOCATIONAL REHAB</a>
-                                <ul class="submenu">
-                                    <p>
-                                        One-on-one assistance with navigating and applying for VA educational benefits,
-                                        disability compensation, life insurance, and home loan guarantees.
-                                    </p>   
-                                </ul>
-                        </li>
-
-                        <li class="has-submenu">
-                            <a href="#">ACADEMIC & CAREER COUNSELING</a>
-                                <ul class="submenu">
-                                    <p>
-                                        Get support choosing a major, exploring career paths, and connecting with SHSU faculty,
-                                         Career Success Center, and community resources to build your future.
-                                    </p>   
-                                </ul>
-                        </li>
-
-                        <li class="has-submenu">
-                            <a href="#">MENTAL HEALTH & READJUSTMENT SERVIC</a>
-                                <ul class="submenu">
-                                    <p>
-                                        Referral assistance for VA mental health services, Vet Center programs,
-                                         and campus counseling tailored for veterans and their families.
-                                    </p>   
-                                </ul>
-                        </li>
-
-                        <li class="has-submenu">
-                            <a href="#">TRANSITION & COMMUNITY OUTREACH</a>
-                                <ul class="submenu">
-                                    <p>
-                                        We collaborate with Vet Centers to host outreach, community education,
-                                         and transition activities—creating a supportive campus environment.
-                                    </p>   
-                                </ul>
-                        </li>
-
-                        
-                    </nav>
-            </div>
-        </div>
-    </section>
-
-    <section class="visit-section">
-        <div class="visit-inner">
-            <h2>Visit Us</h2>
-
-            <div class="visit-card full">
-                <h3>Visit</h3>
-                <p>
-                    Lowman Student Center, Suite 327<br>
-                    1802 Avenue I Huntsville, TX 77340
-                </p>
-                <a href="#" class="map-btn">Find on Google Maps</a>
-            </div>
-
-            <div class="small-card-row">
-                <div class="visit-card">
-                    <h3>Contact Us</h3>
-                    <p>veterans@shsu.edu</p>
-                    <p>936-294-1046</p>
-                </div>
-
-                <div class="visit-card">
-                    <h3>Hours</h3>
-                    <p>Monday – Friday, 8am-5pm</p>
-                </div>
-            </div>
-
-            <div class="visit-card full">
-                <h3>Connect</h3>
-                <div class="socials">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#E4405F">
-  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.327.07 2.667.07 4.85s-.012 3.523-.07 4.85c-.148 3.227-1.664 4.771-4.919 4.919-1.266.058-2.606.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.327-.07-2.667-.07-4.85s.012-3.523.07-4.85c.148-3.227 1.664-4.771 4.919-4.919 1.266-.058 2.606-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.396-.073 2.79-.073 4.947s.014 3.551.072 4.947c.2 4.362 2.618 6.78 6.98 6.98 1.396.059 2.79.073 4.947.073s3.551-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.396.073-2.79.073-4.947s-.014-3.551-.072-4.947c-.2-4.362-2.618-6.78-6.98-6.98-1.396-.059-2.79-.073-4.947-.073zm6.923-2.535c.841.363 1.363.995 1.363 1.837s-.522 1.474-1.363 1.837c-.841.363-1.898.437-2.695.219-1.363-.363-2.102-1.474-2.102-2.695s.739-2.332 2.102-2.695c.797-.218 1.854.066 2.695.437z"/>
-</svg>
-                    <!-- Facebook Logo SVG -->
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#1877F2">
-  <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
-</svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-        <p>© 2026 Sam Houston State University Veterans Benefits Processing. Test Website</p>
-        <p>For more information, visit us at the Veterans Benefits Processing Office or contact us through our website.</p>
-    </footer>
-<script src="../scripts/Veterens-military-connected-center.js"></script>
-</body>
-</html>
+</body></html>
