@@ -308,6 +308,34 @@
  id="f0uBsDEFdBM2wRaN"
  defer>
 </script>
+<script>
+  // Wait for Dify bubble to exist, then animate once
+  window.addEventListener('load', () => {
+    const MAX_WAIT_MS = 8000; // safety cap
+    const CHECK_INTERVAL_MS = 200;
+
+    let waited = 0;
+    const intervalId = setInterval(() => {
+      const bubble = document.querySelector('#dify-chatbot-bubble-button');
+
+      if (bubble) {
+        bubble.classList.add('dify-bubble-animate');
+
+        setTimeout(() => {
+          bubble.classList.remove('dify-bubble-animate');
+        }, 2000);
+
+        clearInterval(intervalId);
+      }
+
+      waited += CHECK_INTERVAL_MS;
+      if (waited >= MAX_WAIT_MS) {
+        clearInterval(intervalId);
+      }
+    }, CHECK_INTERVAL_MS);
+  });
+</script>
+
 </div>
 <style>
 #dify-chatbot-bubble-button {
@@ -325,6 +353,16 @@
     bottom: 1.5rem;
     right: 1.5rem;
     z-index: 1000;
+}
+/* Chatbot Attention Animation */
+@keyframes difyPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(245, 100, 35, 0.0); }
+    50% { transform: scale(1.12); box-shadow: 0 0 18px rgba(245, 100, 35, 0.55); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(245, 100, 35, 0.0); }
+}
+
+.dify-bubble-animate {
+    animation: difyPulse 0.6s ease-in-out 3; /* 3 pulses = ~2 seconds */
 }
 </style>
 
