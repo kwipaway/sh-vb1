@@ -282,6 +282,26 @@
         });
     </script>
 
+<!-------------------------------
+ Mobile Sidebar Menu Collapsed
+ ------------------------------>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const layout = document.querySelector(".layout");
+
+    // If mobile on page load → collapse menu
+    if (window.innerWidth <= 768) {
+        layout.classList.add("menu-collapsed");
+    }
+
+    // If user resizes from desktop → mobile, collapse it
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 768) {
+            layout.classList.add("menu-collapsed");
+        }
+    });
+});
+</script>
 
 <!-- ChatBot Script -->
 <div class="dify-wrapper">
@@ -308,27 +328,6 @@
  src="https://udify.app/embed.min.js"
  id="f0uBsDEFdBM2wRaN"
  defer>
-</script>
-
-<!-------------------------------
- Mobile Sidebar Menu Collapsed
- ------------------------------>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const layout = document.querySelector(".layout");
-
-    // If mobile on page load → collapse menu
-    if (window.innerWidth <= 768) {
-        layout.classList.add("menu-collapsed");
-    }
-
-    // If user resizes from desktop → mobile, collapse it
-    window.addEventListener("resize", () => {
-        if (window.innerWidth <= 768) {
-            layout.classList.add("menu-collapsed");
-        }
-    });
-});
 </script>
 
 <script>
