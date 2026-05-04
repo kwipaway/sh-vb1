@@ -1,11 +1,3 @@
-document.getElementById("pop-up").addEventListener("click", function(event) {
-    event.preventDefault();
-  const shouldNavigate = confirm("You are leaving Main page. This is an external site. Continue?");
-  if (shouldNavigate) {
-    window.location.href = event.target.href;
-  }
-});
-
 const topBtn = document.getElementById("topBtn");
 
 // Show button when scrolling down
