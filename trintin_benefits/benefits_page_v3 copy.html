@@ -12,6 +12,11 @@
             box-sizing: border-box;
         }
         
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: ui-sans-serif, system-ui, sans-serif;
             line-height: 1.6;
@@ -19,6 +24,7 @@
             background-color: transparent;
             min-height: 100vh;
             position: relative;
+            overflow-x: hidden;
         }
         
         body::before,
@@ -367,7 +373,9 @@
         @media (max-width: 768px) {
             .layout {
                 display: block;
-                margin-left: auto;
+                margin: 0;
+                width: 100%;
+                padding: 0;
             }
 
             .sidebar-toggle-btn {
@@ -392,7 +400,7 @@
                 right: 0;
                 top: 70px;
                 bottom: 0;
-                width: 260px;
+                width: min(260px, 90vw);
                 background: white;
                 z-index: 1150;
                 overflow-y: auto;
@@ -401,6 +409,21 @@
                 transition: transform 0.50s ease;
                 border: 1px solid #e2e0da;
                 padding-top: 5rem;
+            }
+
+            .main-content {
+                width: 100%;
+                padding-top: 5rem;
+                margin: 0;
+            }
+
+            .container {
+                padding: 1rem;
+                overflow-x: hidden;
+            }
+
+            .layout-wrapper {
+                overflow-x: hidden;
             }
 
             .layout.menu-collapsed .sidebar-nav {
@@ -1110,6 +1133,12 @@
         const benefitsToggle = document.querySelector('.benefits-toggle');
         const benefitsSubmenu = document.querySelector('.benefits-submenu');
 
+        const updateSidebarState = () => {
+            const shouldCollapse = window.innerWidth <= 768;
+            layoutElement.classList.toggle('menu-collapsed', shouldCollapse);
+            toggleButtons.forEach(btn => btn.setAttribute('aria-expanded', String(!shouldCollapse)));
+        };
+
         toggleButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 const collapsed = layoutElement.classList.toggle('menu-collapsed');
@@ -1122,6 +1151,9 @@
             const isExpanded = benefitsSubmenu.getAttribute('data-expanded') === 'true';
             benefitsSubmenu.setAttribute('data-expanded', String(!isExpanded));
         });
+
+        window.addEventListener('resize', updateSidebarState);
+        document.addEventListener('DOMContentLoaded', updateSidebarState);
     </script>
 </body>
 </html>
