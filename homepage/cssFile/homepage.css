@@ -779,7 +779,8 @@ footer {
     .sidebar-wrapper {
         position: sticky;
         top: 120px; 
-        height: 270px;
+        max-height: calc(100vh - 120px);
+        height: auto;
         align-self: start;
     }
 
