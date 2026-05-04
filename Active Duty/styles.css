@@ -48,10 +48,8 @@ img { max-width: 100%; display: block; }
    Utility Bar
    ============================================= */
 .util-bar {
-  position: relative;
   background: var(--shsu-dark-cyan);
   padding: 0.45rem 0;
-  z-index: 3000;
 }
 
 .util-inner {
@@ -109,7 +107,7 @@ img { max-width: 100%; display: block; }
   border-bottom: 4px solid var(--shsu-orange);
   position: sticky;
   top: 0;
-  z-index: 2000;
+  z-index: 100;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -256,61 +254,7 @@ img { max-width: 100%; display: block; }
    ============================================= */
 .layout-wrapper {
   padding-top: 2.5rem;
-  margin-bottom: 4rem;
-}
-
-.sidebar-toggle-btn {
-  z-index: 1200;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.6rem 0.9rem;
-  margin-bottom: 0.75rem;
-  min-width: max-content;
-  border: none;
-  border-radius: 4px;
-  background: var(--shsu-orange);
-  color: var(--shsu-white);
-  font-family: gt-america, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(245, 100, 35, 0.25);
-  transition: all 0.2s ease;
-}
-
-.sidebar-toggle-btn1 {
-  display: none;
-  z-index: 1750;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.6rem 0.9rem;
-  border: none;
-  border-radius: 4px;
-  background: var(--shsu-orange);
-  color: var(--shsu-white);
-  font-family: gt-america, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(245, 100, 35, 0.25);
-  transition: all 0.2s ease;
-}
-
-.sidebar-toggle-btn:hover {
-  background: rgb(225, 90, 20);
-  box-shadow: 0 4px 12px rgba(245, 100, 35, 0.35);
-}
-
-.sidebar-toggle-btn:active {
-  transform: scale(0.98);
-}
-
-.sidebar-toggle-icon {
-  font-size: 1rem;
-  line-height: 1;
+  padding-bottom: 4rem;
 }
 
 .layout {
@@ -318,41 +262,18 @@ img { max-width: 100%; display: block; }
   grid-template-columns: 255px 1fr;
   gap: 3rem;
   align-items: start;
-  transition: grid-template-columns 0.3s ease;
-}
-
-.layout.menu-collapsed {
-  grid-template-columns: 0 1fr;
-}
-
-.layout.menu-collapsed .sidebar-nav {
-  opacity: 0;
-  pointer-events: none;
-  width: 0;
-  min-width: 0;
-}
-
-.layout.menu-collapsed .sidebar-wrapper {
-  min-width: 0;
-}
-
-.sidebar-wrapper {
-  position: sticky;
-  top: 96px;
-  max-height: calc(100vh - 96px);
-  align-self: start;
-  overflow: visible;
 }
 
 /* =============================================
    Sidebar Navigation
    ============================================= */
 .sidebar-nav {
+  position: sticky;
+  top: 80px;
   background: var(--shsu-white);
   border: 1px solid var(--gray-200);
   border-radius: 3px;
   overflow: visible;
-  transition: opacity 0.2s ease, width 0.3s ease;
 }
 
 .sidebar-list {
@@ -561,7 +482,7 @@ ol.steps li::before {
   width: 2.25rem;
   height: 2.25rem;
   background: var(--shsu-dark-cyan);
-  color: var(--shsu-orange);
+  color: var(--shsu-lime);
   font-family: gt-america, sans-serif;
   font-weight: 700;
   border-radius: 50%;
@@ -607,8 +528,8 @@ ol.steps li .callout {
 }
 
 .tabs label:hover {
-  background: var(--shsu-orange);
-  color: var(--shsu-white);
+  background: var(--shsu-lime);
+  color: var(--shsu-dark-cyan);
 }
 
 .tab-content {
@@ -719,7 +640,7 @@ footer {
 }
 
 .footer-grid h4 {
-  color: var(--shsu-orange);
+  color: var(--shsu-lime);
   font-family: gt-america, sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
@@ -743,7 +664,7 @@ footer {
 }
 
 .footer-grid a:hover {
-  color: var(--shsu-white);
+  color: var(--shsu-lime);
 }
 
 .footer-brand strong {
@@ -757,10 +678,10 @@ footer {
 
 .tagline {
   font-style: italic;
-  color: var(--shsu-orange);
+  color: var(--shsu-lime);
   font-size: 1.05rem;
   line-height: 1.5;
-  border-left: 3px solid var(--shsu-orange);
+  border-left: 3px solid var(--shsu-lime);
   padding-left: 1rem;
 }
 
@@ -773,7 +694,7 @@ footer {
 }
 
 /* =============================================
-   Responsive — ≤ 850px (general layout adjustments)
+   Responsive — ≤ 850px
    ============================================= */
 @media (max-width: 850px) {
   /* Header */
@@ -801,82 +722,14 @@ footer {
     font-size: 2.4rem;
   }
 
-  /* Option cards */
-  .options {
-    grid-template-columns: 1fr;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =============================================
-   Responsive — ≤ 768px (mobile sidebar drawer)
-   ============================================= */
-@media (max-width: 768px) {
-  .main-nav {
-    display: none;
-  }
-
+  /* Layout stacks */
   .layout {
-    display: block;
-    margin-left: auto;
+    grid-template-columns: 1fr;
   }
 
-  .sidebar-wrapper {
-    position: static;
-    max-height: none;
-  }
-
-  .sidebar-toggle-btn {
-    display: none;
-  }
-
-  .sidebar-toggle-btn1 {
-    position: sticky;
-    top: 1rem;
-    right: 1rem;
-    left: auto;
-    display: block;
-    margin-left: auto;
-    z-index: 1200;
-    padding: 0.6rem 0.85rem;
-    font-size: 0.8rem;
-    box-shadow: 0 2px 6px rgba(245, 100, 35, 0.2);
-    transition: all 0.35s ease;
-  }
-
-  .sidebar-toggle-btn1:hover {
-    box-shadow: 0 3px 8px rgba(245, 100, 35, 0.3);
-  }
-
+  /* Sidebar */
   .sidebar-nav {
-    position: fixed;
-    right: 0;
-    top: 70px;
-    bottom: 0;
-    width: 260px;
-    background: var(--shsu-white);
-    z-index: 1150;
-    overflow-y: auto;
-    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.16);
-    transform: translateX(0);
-    transition: transform 0.50s ease;
-    border: 1px solid var(--gray-200);
-    padding-top: 5rem;
-  }
-
-  .layout.menu-collapsed .sidebar-nav {
-    transform: translateX(100%);
-    opacity: 1;
-    pointer-events: auto;
-    width: 260px;
-  }
-
-  .main-content {
-    padding-top: 1rem;
+    position: static;
   }
 
   /* Flyout becomes inline on mobile */
@@ -894,74 +747,14 @@ footer {
   .has-flyout:hover .flyout {
     display: block;
   }
-}
 
-/* ========================================================================================================
-   External Pop-up Site Warning
-   ======================================================================================================== */
-.external-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 5000;
-}
+  /* Option cards */
+  .options {
+    grid-template-columns: 1fr;
+  }
 
-.external-modal-content {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 320px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    border-left: 6px solid var(--shsu-orange);
-}
-
-.external-modal-content h2 {
-    color: var(--shsu-dark-cyan);
-    margin-bottom: 1rem;
-}
-
-.countdown-text {
-    margin: 1rem 0;
-    font-weight: 600;
-    color: var(--shsu-dark-cyan);
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.modal-continue {
-    background: var(--shsu-orange);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.modal-cancel {
-    background: #ccc;
-    color: #333;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.modal-continue:hover {
-    background: rgb(225, 90, 20);
-}
-
-.modal-cancel:hover {
-    background: #b5b5b5;
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }
