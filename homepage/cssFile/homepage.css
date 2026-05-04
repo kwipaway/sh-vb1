@@ -492,6 +492,10 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
+
+
+/* =============================================
+ Main Content Area ============================================= */
 /* Main content area */
 .main-content {
     flex: 1 1 auto;
