@@ -933,14 +933,14 @@ footer {
         z-index: 1150;
         overflow-y: auto;
         box-shadow: 2px 0 20px rgba(0, 0, 0, 0.16);
-        transform: translateX(100%);
+        transform: translateX(0);
         transition: transform 0.50s ease;
         border: 1px solid var(--gray-200);
         padding-top: 5rem;
     }
 
     .layout.menu-collapsed .sidebar-nav {
-        transform: translateX(0);
+        transform: translateX(100%);
     }
 
     .main-content {
