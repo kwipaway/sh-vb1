@@ -20,7 +20,7 @@ function scrollToTop() {
 document.addEventListener("DOMContentLoaded", () => {
 
   const hamburger = document.getElementById("hamburger");
-  const menu = document.querySelector(".side-menu");
+  const menu = document.getElementById("side-menu");
 
   if (hamburger && menu) {
     hamburger.addEventListener("click", () => {
