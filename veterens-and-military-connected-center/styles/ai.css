@@ -669,3 +669,39 @@ footer {
         font-size: clamp(28px, 6vw, 48px);
     }
 }
+
+/* Slide-in overlay */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.visible {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .side-menu {
+    position: fixed;
+    top: 110px;          /* ← pushes it below the header/hamburger */
+    right: 0;
+    height: calc(100vh - 90px);   /* ← fills remaining screen height */
+    width: 280px;
+    background: var(--white);
+    z-index: 999;
+    padding: 30px 20px;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block !important;
+    overflow-y: auto;
+  }
+
+  .side-menu.open {
+    transform: translateX(0);
+  }
+}
