@@ -1,10 +1,56 @@
+/* ========================================================================================================
+   SECTION 1 — RESET & BASE STYLES
+   ======================================================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ========================================================================================================
+   SECTION 2 — ROOT VARIABLES
+   ======================================================================================================== */
+
 :root {
   --shsu-orange: rgb(245, 100, 35);
   --shsu-white: rgb(255, 255, 255);
   --shsu-dark-cyan: rgb(0, 72, 83);
   --shsu-lime: rgb(163, 210, 55);
-  --page-bg: #f2f2f2;
+
+  --gray-50: #f5f5f3;
+  --gray-200: #e2e0da;
+  --gray-500: #6b6b6b;
+  --gray-800: #2a2a2a;
+
+  /* You chose homepage background */
+  --page-bg: #f9f9f9;
 }
+
+/* ========================================================================================================
+   SECTION 3 — GLOBAL ELEMENTS
+   ======================================================================================================== */
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--shsu-dark-cyan);
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.6;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  tab-size: 4;
+}
+
+/* ========================================================================================================
+   SECTION 4 — CONTAINER
+   ======================================================================================================== */
 
 .container {
   max-width: 1180px;
@@ -12,30 +58,10 @@
   padding: 0 1.5rem;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* ========================================================================================================
+   SECTION 5 — UTILITY BAR
+   ======================================================================================================== */
 
-body {
-  margin: 0;
-  background: var(--page-bg);
-  color: var(--shsu-dark-cyan);
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.page-wrap {
-  width: min(1080px, 100% - 40px);
-  margin: 38px auto 40px;
-}
-
-.page {
-  background: #f7f7f7;
-  border-radius: 14px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
-  padding: 56px 56px 40px;
-}
-
-/* Homepage utility bar, site header, and sidebar styles */
 .util-bar {
     position: relative;
     background: var(--shsu-dark-cyan);
@@ -90,6 +116,10 @@ body {
   border-color: rgba(255, 255, 255, 0.7);
 }
 
+/* ========================================================================================================
+   SECTION 6 — SITE HEADER
+   ======================================================================================================== */
+
 .site-header {
   background: var(--shsu-white);
   border-bottom: 4px solid var(--shsu-orange);
@@ -121,6 +151,10 @@ body {
   height: 38px;
   width: auto;
 }
+
+/* ========================================================================================================
+   SECTION 7 — MAIN NAVIGATION
+   ======================================================================================================== */
 
 .main-nav ul {
   list-style: none;
@@ -177,11 +211,18 @@ body {
   color: var(--shsu-white) !important;
   border-color: var(--shsu-dark-cyan) !important;
 }
+/* ========================================================================================================
+   SECTION 8 — LAYOUT WRAPPER
+   ======================================================================================================== */
 
 .layout-wrapper {
     padding-top: 2.5rem;
     padding-bottom: 4rem;
 }
+
+/* ========================================================================================================
+   SECTION 9 — SIDEBAR TOGGLE BUTTONS (Desktop + Mobile)
+   ======================================================================================================== */
 
 .sidebar-toggle-btn {
     position: sticky;
@@ -189,25 +230,6 @@ body {
     left: 1rem;
     z-index: 1200;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    padding: 0.6rem 0.9rem;
-    border: none;
-    border-radius: 4px;
-    background: var(--shsu-orange);
-    color: var(--shsu-white);
-    font-family: gt-america, sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(245, 100, 35, 0.25);
-    transition: all 0.2s ease;
-}
-
-.sidebar-toggle-btn1 {
-    display: none;
-    z-index: 1750;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
@@ -233,10 +255,33 @@ body {
     transform: scale(0.98);
 }
 
+.sidebar-toggle-btn1 {
+    display: none;
+    z-index: 1750;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.9rem;
+    border: none;
+    border-radius: 4px;
+    background: var(--shsu-orange);
+    color: var(--shsu-white);
+    font-family: gt-america, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(245, 100, 35, 0.25);
+    transition: all 0.2s ease;
+}
+
 .sidebar-toggle-icon {
     font-size: 1rem;
     line-height: 1;
 }
+
+/* ========================================================================================================
+   SECTION 10 — LAYOUT GRID (Sidebar + Main Content)
+   ======================================================================================================== */
 
 .layout {
     display: grid;
@@ -261,9 +306,13 @@ body {
     min-width: 0;
 }
 
+/* ========================================================================================================
+   SECTION 11 — SIDEBAR NAVIGATION (Merged + Cleaned)
+   ======================================================================================================== */
+
 .sidebar-nav {
     background: var(--shsu-white);
-    border: 1px solid var(--shsu-dark-cyan);
+    border: 1px solid var(--gray-200); /* You chose homepage border */
     border-radius: 3px;
     overflow: visible;
 }
@@ -273,7 +322,7 @@ body {
 }
 
 .sidebar-list > li {
-    border-bottom: 1px solid rgba(0, 72, 83, 0.15);
+    border-bottom: 1px solid var(--gray-200);
     position: relative;
 }
 
@@ -294,15 +343,327 @@ body {
 }
 
 .sidebar-list > li > a:hover {
-    background: #f5f5f3;
+    background: var(--gray-50); /* You chose homepage hover */
     border-left-color: var(--shsu-orange);
 }
 
 .sidebar-list > li > a.active {
-    background: #f5f5f3;
+    background: var(--gray-50);
     border-left-color: var(--shsu-orange);
     font-family: gt-america, sans-serif;
     font-weight: 700;
+}
+
+/* ========================================================================================================
+   SECTION 12 — FLYOUT MENUS (Homepage functionality)
+   ======================================================================================================== */
+
+.flyout-indicator {
+    font-size: 1.05rem;
+    color: var(--gray-500);
+    line-height: 1;
+}
+
+.has-flyout .flyout {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 175px;
+    list-style: none;
+    background: var(--shsu-white);
+    border: 1px solid var(--gray-200);
+    border-left: 3px solid var(--shsu-orange);
+    border-radius: 0 3px 3px 0;
+    box-shadow: 6px 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+}
+
+.has-flyout:hover .flyout {
+    display: block;
+}
+
+.has-flyout .flyout li a {
+    display: block;
+    padding: 0.65rem 1rem;
+    color: var(--shsu-dark-cyan);
+    text-decoration: none;
+    font-size: 0.87rem;
+    border-bottom: 1px solid var(--gray-200);
+    transition: background 0.15s, color 0.15s;
+}
+
+.has-flyout .flyout li:last-child a {
+    border-bottom: none;
+}
+
+.has-flyout .flyout li a:hover {
+    background: var(--gray-50);
+    color: var(--shsu-orange);
+}
+
+/* ========================================================================================================
+   SECTION 13 — BENEFITS ACCORDION (Homepage functionality)
+   ======================================================================================================== */
+
+.benefits-flyout {
+    display: none;
+    list-style: none;
+    background: var(--gray-50);
+    border-left: 3px solid var(--shsu-orange);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+
+.benefits-submenu[data-expanded="true"] .benefits-flyout {
+    display: block;
+    max-height: 500px;
+}
+
+.benefits-flyout li {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.benefits-flyout li:last-child {
+    border-bottom: none;
+}
+
+.benefits-flyout li a {
+    display: block;
+    padding: 0.65rem 1rem;
+    padding-left: 1.5rem;
+    color: var(--shsu-dark-cyan);
+    text-decoration: none;
+    font-size: 0.87rem;
+    transition: background 0.15s, color 0.15s;
+}
+
+.benefits-flyout li a:hover {
+    background: var(--gray-200);
+    color: var(--shsu-orange);
+}
+
+.benefits-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+.benefits-submenu[data-expanded="true"] .flyout-indicator {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+/* ========================================================================================================
+   SECTION 14 — LIGHT BORDER UTILITY
+   ======================================================================================================== */
+
+.border-b-theme-on-primary {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+/* ========================================================================================================
+   SECTION 15 — MAIN CONTENT AREA (Homepage)
+   ======================================================================================================== */
+
+.main-content {
+    flex: 1 1 auto;
+}
+
+/* ========================================================================================================
+   SECTION 16 — INTRO SECTIONS (Homepage)
+   ======================================================================================================== */
+
+.intro-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.intro-section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* ========================================================================================================
+   SECTION 17 — BENEFITS OVERVIEW (Homepage)
+   ======================================================================================================== */
+
+.benefits-overview {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ========================================================================================================
+   SECTION 18 — SECTION TITLES (Homepage)
+   ======================================================================================================== */
+
+.section-title {
+    font-family: gt-america, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(0, 72, 83);
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid rgb(245, 100, 35);
+    padding-bottom: 0.5rem;
+}
+
+.subsection-title {
+    font-family: gt-america, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(245, 100, 35);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* ========================================================================================================
+   SECTION 19 — COMPARISON TABLES (Homepage)
+   ======================================================================================================== */
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comparison-table thead {
+    background-color: rgb(0, 72, 83);
+    color: white;
+}
+
+.comparison-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 700;
+    border: 1px solid #ddd;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #efefef;
+}
+
+/* ========================================================================================================
+   SECTION 20 — REQUIREMENT LIST BOXES (Homepage)
+   ======================================================================================================== */
+
+.requirement-list {
+    background: #f9f9f9;
+    border-left: 4px solid rgb(245, 100, 35);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.requirement-list h4 {
+    color: rgb(0, 72, 83);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.requirement-list ul {
+    list-style-position: inside;
+    color: #333;
+}
+
+.requirement-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================================================================================
+   SECTION 21 — HIGHLIGHT BOXES (Homepage)
+   ======================================================================================================== */
+
+.highlight-box {
+    background: rgb(163, 210, 55);
+    color: rgb(0, 72, 83);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    font-weight: 500;
+}
+
+/* ========================================================================================================
+   SECTION 22 — CAUTION BOXES (Homepage)
+   ======================================================================================================== */
+
+.caution-box {
+    background: #fff3cd;
+    border-left: 4px solid #ff6600;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+.caution-box strong {
+    color: rgb(245, 100, 35);
+}
+
+/* ========================================================================================================
+   SECTION 23 — INFO GRID + CARDS (Homepage)
+   ======================================================================================================== */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 4px solid rgb(245, 100, 35);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+    color: rgb(0, 72, 83);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.info-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ========================================================================================================
+   SECTION 24 — CONTACT PAGE CONTENT (Contacts‑First)
+   ======================================================================================================== */
+
+.page-wrap {
+  width: min(1080px, 100% - 40px);
+  margin: 38px auto 40px;
+}
+
+.page {
+  background: #f7f7f7;
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  padding: 56px 56px 40px;
 }
 
 .headline {
@@ -378,6 +739,30 @@ body {
   color: var(--shsu-white);
   text-decoration-thickness: 1px;
 }
+/* ========================================================================================================
+   SECTION 25 — FOOTER (Homepage)
+   ======================================================================================================== */
+
+footer {
+    background-color: rgb(0, 72, 83);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+.note {
+    font-style: italic;
+    color: #666;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+/* ========================================================================================================
+   SECTION 26 — CONTACT PAGE FOOTER (Contacts‑First)
+   ======================================================================================================== */
 
 .footer-top {
   margin-top: 46px;
@@ -444,115 +829,254 @@ body {
   font-size: 0.74rem;
   line-height: 1.2;
   font-weight: 700;
-  letter-spacing: 0;
 }
 
-@media (max-width: 860px) {
-  .page {
-    padding: 34px 24px 24px;
-  }
+/* ========================================================================================================
+   SECTION 27 — ANIMATIONS & SCROLL INDICATORS (Homepage)
+   ======================================================================================================== */
 
-  .headline {
-    font-size: 2.9rem;
-  }
-
-  .top-contact {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .staff-section {
-    margin-top: 44px;
-  }
-
-  .resource-links {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-    gap: 9px;
-  }
-
-  .footer-top {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .footer {
-    flex-direction: column;
-  }
-
-  .motto {
-    text-align: left;
-  }
-}
-/* =============================================
-   Sidebar Navigation
-   ============================================= */
-.sidebar-nav {
-    background: var(--shsu-white);
-    border: 1px solid var(--gray-200);
-    border-radius: 3px;
-    overflow: visible;
+.scroll-indicator,
+.scroll-indicator-top,
+.scroll-indicator-bottom {
+    display: none;
+    text-align: center;
+    padding: 1.5rem 0;
+    color: rgb(0, 72, 83);
+    font-weight: 500;
+    animation: fadeInUp 1s ease-in-out;
 }
 
-.sidebar-list {
-    list-style: none;
-}
-
-.sidebar-list > li {
-    border-bottom: 1px solid var(--gray-200);
-    position: relative;
-}
-
-.sidebar-list > li:last-child {
-    border-bottom: none;
-}
-
-.sidebar-list > li > a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.78rem 1rem;
-    color: var(--shsu-dark-cyan);
-    text-decoration: none;
-    font-size: 0.9rem;
-    border-left: 3px solid transparent;
-    transition: background 0.15s, border-color 0.15s;
-}
-
-.sidebar-list > li > a:hover {
-    background: var(--gray-50);
-    border-left-color: var(--shsu-orange);
-}
-
-.sidebar-list > li > a.active {
-    background: var(--gray-50);
-    border-left-color: var(--shsu-orange);
-    font-family: gt-america, sans-serif;
-    font-weight: 700;
-}
-
-.flyout-indicator {
-    font-size: 1.05rem;
-    color: var(--gray-500);
+.scroll-arrows {
+    display: inline-block;
+    font-size: 1.5rem;
     line-height: 1;
 }
 
-/* Flyout submenu — pure CSS :hover */
-.has-flyout .flyout {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    min-width: 175px;
-    list-style: none;
-    background: var(--shsu-white);
-    border: 1px solid var(--gray-200);
-    border-left: 3px solid var(--shsu-orange);
-    border-radius: 0 3px 3px 0;
-    box-shadow: 6px 4px 16px rgba(0, 0, 0, 0.1);
-    z-index: 200;
+.arrow {
+    display: inline-block;
+    animation: bounce 2s infinite;
+    margin: 0 0.25rem;
 }
 
-.has-flyout:hover .flyout {
-    display: block;
+.arrow:nth-child(2) { animation-delay: 0.2s; }
+.arrow:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-10px); opacity: 0.7; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-height: 700px) {
+    .scroll-indicator-top { display: block; }
+}
+
+@media (min-height: 700px) and (max-height: 1000px) {
+    .scroll-indicator-bottom { display: block; }
+}
+
+/* ========================================================================================================
+   SECTION 28 — RESPONSIVE MEDIA QUERIES (Homepage + Contacts)
+   ======================================================================================================== */
+
+/* Small screens */
+@media (max-width: 768px) {
+
+    .page-title { font-size: 2.5rem; }
+    .section-title { font-size: 1.5rem; }
+
+    .comparison-table { font-size: 0.9rem; }
+    .comparison-table th,
+    .comparison-table td { padding: 0.75rem 0.5rem; }
+
+    .main-nav { display: none; }
+
+    .header-inner {
+        justify-content: space-between;
+    }
+
+    /* Layout */
+    .layout {
+        display: block;
+        margin-left: auto;
+    }
+
+    .sidebar-toggle-btn {
+        display: none;
+    }
+
+    .sidebar-toggle-btn1 {
+        position: sticky;
+        top: 1rem;
+        right: 1rem;
+        left: auto;
+        display: block;
+        margin-left: auto;
+        z-index: 1200;
+        padding: 0.6rem 0.85rem;
+        font-size: 0.8rem;
+        box-shadow: 0 2px 6px rgba(245, 100, 35, 0.2);
+        transition: all 0.35s ease;
+    }
+
+    .sidebar-nav {
+        position: fixed;
+        right: 0;
+        top: 70px;
+        bottom: 0;
+        width: 260px;
+        background: var(--shsu-white);
+        z-index: 1150;
+        overflow-y: auto;
+        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.16);
+        transform: translateX(100%);
+        transition: transform 0.50s ease;
+        border: 1px solid var(--gray-200);
+        padding-top: 5rem;
+    }
+
+    .layout.menu-collapsed .sidebar-nav {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        padding-top: 5rem;
+    }
+
+    /* Contact page responsive */
+    .page {
+        padding: 34px 24px 24px;
+    }
+
+    .headline {
+        font-size: 2.9rem;
+    }
+
+    .top-contact {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .staff-section {
+        margin-top: 44px;
+    }
+
+    .resource-links {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        gap: 9px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .motto {
+        text-align: left;
+    }
+}
+
+/* Desktop screens */
+@media (min-width: 769px) {
+
+    .layout {
+        display: grid;
+        grid-template-columns: 255px 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .sidebar-wrapper {
+        position: sticky;
+        top: 120px;
+        max-height: calc(100vh - 120px);
+        height: auto;
+        align-self: start;
+    }
+
+    .sidebar-nav {
+        position: static;
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+/* ========================================================================================================
+   SECTION 29 — EXTERNAL LINK WARNING MODAL (Homepage)
+   ======================================================================================================== */
+
+.external-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+}
+
+.external-modal-content {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    border-left: 6px solid var(--shsu-orange);
+}
+
+.external-modal-content h2 {
+    color: var(--shsu-dark-cyan);
+    margin-bottom: 1rem;
+}
+
+.countdown-text {
+    margin: 1rem 0;
+    font-weight: 600;
+    color: var(--shsu-dark-cyan);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-continue {
+    background: var(--shsu-orange);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-cancel {
+    background: #ccc;
+    color: #333;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-continue:hover {
+    background: rgb(225, 90, 20);
+}
+
+.modal-cancel:hover {
+    background: #b5b5b5;
 }
