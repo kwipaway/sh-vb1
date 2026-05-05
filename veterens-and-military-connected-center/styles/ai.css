@@ -664,3 +664,75 @@ footer {
     font-size: clamp(28px, 6vw, 48px);
   }
 }
+
+/* Default (desktop) → SHOW menu */
+.side-menu {
+  display: block;
+}
+
+/* Small screens → HIDE menu */
+@media (max-width: 768px) {
+  .side-menu {
+    display: none;
+  }
+}
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Desktop menu visible */
+.side-menu {
+  display: block;
+}
+.hamburger {
+  color: var(--shsu-orange);
+}
+/* Mobile */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .side-menu {
+    display: none;
+  }
+
+  .side-menu.active {
+    display: block;
+  }
+}
+/* Desktop default: show menu, hide hamburger */
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Push hamburger to far right */
+.hamburger-item {
+  margin-left: auto;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* hide all menu items except hamburger */
+  .main-nav ul li:not(.hamburger-item) {
+    display: none;
+  }
+
+  /* show hamburger */
+  .hamburger {
+    display: block;
+  }
+}
