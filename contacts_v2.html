@@ -163,6 +163,24 @@
         <a href="#">Open Records Requests</a>
       </section>
     </section>
+    <!-- ==========================================
+     External Pop-up Site Warning  
+     ==========================================-->
+    <div id="externalModal" class="external-modal">
+        <div class="external-modal-content">
+            <h2>You are leaving Veterans Benefits Processing</h2>
+            <p>Continue?</p>
+
+            <p class="countdown-text">
+                Redirecting in <span id="countdown">10</span> seconds...
+            </p>
+
+            <div class="modal-buttons">
+                <button id="continueBtn" class="modal-continue">Continue</button>
+                <button id="cancelBtn" class="modal-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
       <p class="member">Member The Texas State University System</p>
@@ -172,5 +190,191 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const externalLink = document.querySelector(
+            'a[href*="Veterens-military-connected-center.html"]'
+        );
+
+        const modal = document.getElementById("externalModal");
+        const continueBtn = document.getElementById("continueBtn");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const countdownEl = document.getElementById("countdown");
+
+        let countdown = 10;
+        let timer;
+
+        const externalURL = "../../veterens-and-military-connected-center/files/Veterens-military-connected-center.html";
+
+        externalLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            modal.style.display = "flex";
+
+            countdown = 10;
+            countdownEl.textContent = countdown;
+
+            timer = setInterval(() => {
+                countdown--;
+                countdownEl.textContent = countdown;
+
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    window.location.href = externalURL;
+                }
+            }, 1000);
+        });
+
+        continueBtn.addEventListener("click", () => {
+            clearInterval(timer);
+            window.location.href = externalURL;
+        });
+
+        cancelBtn.addEventListener("click", () => {
+            clearInterval(timer);
+            modal.style.display = "none";
+        });
+
+    });
+    </script>
+
+
+<!-------------------------------
+ Sidebar Menu Toggle Button Desktop + Mobile
+ ------------------------------>
+    <script>
+        const toggleButtons = [
+            document.getElementById('sidebarToggleBtn'),
+            document.getElementById('sidebarToggleBtn1')
+        ].filter(Boolean); // removes nulls if one button doesn't exist
+
+        const layoutElement = document.querySelector('.layout');
+        const benefitsToggle = document.querySelector('.benefits-toggle');
+        const benefitsSubmenu = document.querySelector('.benefits-submenu');
+
+        // Handle BOTH toggle buttons
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const collapsed = layoutElement.classList.toggle('menu-collapsed');
+                toggleButtons.forEach(b => b.setAttribute('aria-expanded', String(!collapsed)));
+            });
+        });
+
+        // Benefits submenu logic stays the same
+        benefitsToggle?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isExpanded = benefitsSubmenu.getAttribute('data-expanded') === 'true';
+            benefitsSubmenu.setAttribute('data-expanded', String(!isExpanded));
+        });
+    </script>
+
+<!-------------------------------
+ Mobile Sidebar Menu Collapsed
+ ------------------------------>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const layout = document.querySelector(".layout");
+
+    // If mobile on page load → collapse menu
+    if (window.innerWidth <= 768) {
+        layout.classList.add("menu-collapsed");
+    }
+
+    // If user resizes from desktop → mobile, collapse it
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 768) {
+            layout.classList.add("menu-collapsed");
+        }
+    });
+});
+</script>
+
+<!-- ChatBot Script -->
+<div class="dify-wrapper">
+<script>
+ window.difyChatbotConfig = {
+  token: 'f0uBsDEFdBM2wRaN',
+  inputs: {
+    // You can define the inputs from the Start node here
+    // key is the variable name
+    // e.g.
+    // name: "NAME"
+  },
+  systemVariables: {
+    // user_id: 'YOU CAN DEFINE USER ID HERE',
+    // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+  },
+  userVariables: {
+    // avatar_url: //trintin_benefits/shsuBearkatLogo.svg,
+    // name: 'YOU CAN DEFINE USER NAME HERE',
+  },
+ }
+</script>
+<script
+ src="https://udify.app/embed.min.js"
+ id="f0uBsDEFdBM2wRaN"
+ defer>
+</script>
+
+<script>
+  // Wait for Dify bubble to exist, then animate once
+  window.addEventListener('load', () => {
+    const MAX_WAIT_MS = 8000; // safety cap
+    const CHECK_INTERVAL_MS = 200;
+
+    let waited = 0;
+    const intervalId = setInterval(() => {
+      const bubble = document.querySelector('#dify-chatbot-bubble-button');
+
+      if (bubble) {
+        bubble.classList.add('dify-bubble-animate');
+
+        setTimeout(() => {
+          bubble.classList.remove('dify-bubble-animate');
+        }, 2000);
+
+        clearInterval(intervalId);
+      }
+
+      waited += CHECK_INTERVAL_MS;
+      if (waited >= MAX_WAIT_MS) {
+        clearInterval(intervalId);
+      }
+    }, CHECK_INTERVAL_MS);
+  });
+</script>
+
+</div>
+<style>
+#dify-chatbot-bubble-button {
+    background-color: #F56423 !important;
+}
+#dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+    position: fixed !important;
+    bottom: 70px !important;
+    right: 20px !important;
+}
+.dify-wrapper {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+}
+/* Chatbot Attention Animation */
+@keyframes difyPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(245, 100, 35, 0.0); }
+    50% { transform: scale(1.12); box-shadow: 0 0 18px rgba(245, 100, 35, 0.55); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(245, 100, 35, 0.0); }
+}
+
+.dify-bubble-animate {
+    animation: difyPulse 0.6s ease-in-out 3; /* 3 pulses = ~2 seconds */
+}
+</style>
+
+
 </body>
 </html>
