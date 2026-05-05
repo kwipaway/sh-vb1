@@ -587,10 +587,22 @@ footer {
     border-top: 1px solid #ddd;
 }
 
- /* ===== MOBILE (max-width: 900px) ===== */
+/* ===== DESKTOP DEFAULTS (outside any query) ===== */
+.side-menu {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--orange);
+}
+
+/* ===== MOBILE (max-width: 900px) ===== */
 @media (max-width: 900px) {
     html {
-        overflow-x: clip; /* ← fixes sticky, replaces overflow-x: hidden */
+        overflow-x: clip;
     }
 
     body {
@@ -598,27 +610,38 @@ footer {
     }
 
     .main-nav {
-        flex-direction: row;
-        flex-wrap: nowrap;
+        display: none;
+    }
+
+    .main-nav.active {
+        display: flex;
+        flex-direction: column;
         padding: 10px 12px;
-        /* removed overflow: hidden — also breaks sticky */
     }
 
     .main-nav ul {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        margin-top: 0;
-        gap: 6px;
-        font-size: 11px;
+        display: none;
+    }
+
+    .top-links {
+        display: none;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+    .side-menu.active {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .logo-link svg {
         width: 120px;
         height: auto;
-    }
-
-    .top-links {
-        padding: 6px 12px;
     }
 
     .top-links-inner {
@@ -645,31 +668,4 @@ footer {
     .people-grid h1 {
         font-size: clamp(28px, 6vw, 48px);
     }
-}
-
-/* ===== MOBILE SIDEBAR & HAMBURGER (max-width: 768px) ===== */
-@media (max-width: 768px) {
-    .side-menu {
-        display: none;
-    }
-
-    .side-menu.active {
-        display: block;
-    }
-
-    .hamburger {
-        display: block;
-    }
-}
-
-/* ===== DESKTOP DEFAULTS (outside any query) ===== */
-.side-menu {
-    display: block;
-}
-
-.hamburger {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--shsu-orange);
 }
