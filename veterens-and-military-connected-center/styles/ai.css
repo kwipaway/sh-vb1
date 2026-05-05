@@ -586,3 +586,86 @@ footer {
     padding-top: 1rem;
     border-top: 1px solid #ddd;
 }
+
+/* ===== DESKTOP DEFAULTS (outside any query) ===== */
+.side-menu {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--orange);
+}
+
+/* ===== MOBILE (max-width: 900px) ===== */
+@media (max-width: 900px) {
+    html {
+        overflow-x: clip;
+    }
+
+    body {
+        overflow-x: clip;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .main-nav.active {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 12px;
+    }
+
+    .main-nav ul {
+        display: none;
+    }
+
+    .top-links {
+        display: none;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+    .side-menu.active {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logo-link svg {
+        width: 120px;
+        height: auto;
+    }
+
+    .top-links-inner {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+        font-size: 10px;
+        overflow-x: auto;
+    }
+
+    .nav-apply, .nav-request {
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+
+    .people-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .people-section {
+        padding: 40px 20px;
+    }
+
+    .people-grid h1 {
+        font-size: clamp(28px, 6vw, 48px);
+    }
+}

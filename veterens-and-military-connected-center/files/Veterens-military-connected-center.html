@@ -77,6 +77,7 @@
             <li><a href="#" class="nav-request">Request Info</a></li>
         </ul>
         </nav>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
 
     </div>
     </header>
@@ -107,7 +108,7 @@
     </section>
 
     <section class="page-layout">
-        <aside class="side-menu">
+        <aside class="side-menu" id="side-menu">
             <h3>Menu</h3>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -117,70 +118,70 @@
                 <!--<li><a href="../../homepage/html file/homepage.html" id="pop-up">Veterans Benefits Processing</a></li>-->
                 <li><a href="../../homepage/html file/homepage.html" target="_blank">Veterans & Military Connected Center ↗</a></li>
                 <div id="externalModal" class="external-modal">
-        <div class="external-modal-content">
-            <h2>You are leaving Veterans Benefits Processing</h2>
-            <p>Continue?</p>
+                    <div class="external-modal-content">
+                        <h2>You are leaving Veterans Benefits Processing</h2>
+                        <p>Continue?</p>
 
-            <p class="countdown-text">
-                Redirecting in <span id="countdown">10</span> seconds...
-            </p>
+                        <p class="countdown-text">
+                            Redirecting in <span id="countdown">10</span> seconds...
+                        </p>
 
-            <div class="modal-buttons">
-                <button id="continueBtn" class="modal-continue">Continue</button>
-                <button id="cancelBtn" class="modal-cancel">Cancel</button>
-            </div>
-        </div>
-    </div>
-    <!-------------------------------
-        External Link Pop-up Warning Script
- ------------------------------>
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
+                        <div class="modal-buttons">
+                            <button id="continueBtn" class="modal-continue">Continue</button>
+                            <button id="cancelBtn" class="modal-cancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                        <!-------------------------------
+                            External Link Pop-up Warning Script
+                    ------------------------------>
+                <script>
+                document.addEventListener("DOMContentLoaded", () => {
 
-        const externalLink = document.querySelector(
-            'a[href*="../../homepage/html file/homepage.html"]'
-        );
+                    const externalLink = document.querySelector(
+                        'a[href*="../../homepage/html file/homepage.html"]'
+                    );
 
-        const modal = document.getElementById("externalModal");
-        const continueBtn = document.getElementById("continueBtn");
-        const cancelBtn = document.getElementById("cancelBtn");
-        const countdownEl = document.getElementById("countdown");
+                    const modal = document.getElementById("externalModal");
+                    const continueBtn = document.getElementById("continueBtn");
+                    const cancelBtn = document.getElementById("cancelBtn");
+                    const countdownEl = document.getElementById("countdown");
 
-        let countdown = 10;
-        let timer;
+                    let countdown = 10;
+                    let timer;
 
-        const externalURL = "../../homepage/html file/homepage.html";
+                    const externalURL = "../../homepage/html file/homepage.html";
 
-        externalLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            modal.style.display = "flex";
+                    externalLink.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        modal.style.display = "flex";
 
-            countdown = 10;
-            countdownEl.textContent = countdown;
+                        countdown = 10;
+                        countdownEl.textContent = countdown;
 
-            timer = setInterval(() => {
-                countdown--;
-                countdownEl.textContent = countdown;
+                        timer = setInterval(() => {
+                            countdown--;
+                            countdownEl.textContent = countdown;
 
-                if (countdown <= 0) {
-                    clearInterval(timer);
-                    window.location.href = externalURL;
-                }
-            }, 1000);
-        });
+                            if (countdown <= 0) {
+                                clearInterval(timer);
+                                window.location.href = externalURL;
+                            }
+                        }, 1000);
+                    });
 
-        continueBtn.addEventListener("click", () => {
-            clearInterval(timer);
-            window.location.href = externalURL;
-        });
+                    continueBtn.addEventListener("click", () => {
+                        clearInterval(timer);
+                        window.location.href = externalURL;
+                    });
 
-        cancelBtn.addEventListener("click", () => {
-            clearInterval(timer);
-            modal.style.display = "none";
-        });
+                    cancelBtn.addEventListener("click", () => {
+                        clearInterval(timer);
+                        modal.style.display = "none";
+                    });
 
-    });
-    </script>
+                });
+                </script>
             </ul>
         </aside>
 

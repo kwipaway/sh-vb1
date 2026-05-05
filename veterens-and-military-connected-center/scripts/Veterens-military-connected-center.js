@@ -16,3 +16,16 @@ function scrollToTop() {
         behavior: "smooth"
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("side-menu");
+
+  if (hamburger && menu) {
+    hamburger.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  }
+
+});
