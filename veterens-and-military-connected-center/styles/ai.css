@@ -586,3 +586,81 @@ footer {
     padding-top: 1rem;
     border-top: 1px solid #ddd;
 }
+
+ @media (max-width: 900px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .main-nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px 12px;
+    overflow: hidden;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 0;
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .logo-link svg {
+    width: 120px;
+    height: auto;
+  }
+
+  .top-links {
+    padding: 6px 12px;
+  }
+
+  .top-links-inner {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    font-size: 10px;
+    overflow-x: auto;
+  }
+
+  .nav-apply, .nav-request {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 900px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .top-links {
+    padding: 6px 12px;
+  }
+
+  .top-links-inner {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    font-size: 10px;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .people-section {
+    padding: 40px 20px;
+  }
+
+  .people-grid h1 {
+    font-size: clamp(28px, 6vw, 48px);
+  }
+}
