@@ -13,11 +13,11 @@
      ========================================== -->
 <div class="util-bar">
   <div class="container util-inner">
-    <a href="#">About</a>
-    <a href="#">Alumni</a>
-    <a href="#">Athletics</a>
-    <a href="#">Giving</a>
-    <a href="#">News</a>
+    <a href="https://www.shsu.edu/about/">About</a>
+    <a href="https://www.shsu.edu/alumni-association/">Alumni</a>
+    <a href="https://gobearkats.com/">Athletics</a>
+    <a href="https://www.shsu.edu/offices-departments/university-advancement/give-now">Giving</a>
+    <a href="https://www.shsu.edu/news/">News</a>
     <a href="#" class="util-btn">Tools &amp; Support</a>
     <button class="util-search" aria-label="Open Search">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 16 16" aria-hidden="true">
@@ -35,7 +35,7 @@
   <div class="container header-inner">
 
     <!-- SHSU Logo — inline SVG wordmark -->
-    <a href="#" aria-label="Sam Houston State University home" class="logo-link">
+    <a href="https://www.shsu.edu/" aria-label="Sam Houston State University home" class="logo-link">
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="42" viewBox="0 0 209 42" width="209" aria-hidden="true">
         <path d="M54.0776 40.8995H54.4506V41.9999H54.6992V40.8995H55.0722V40.7161H54.0776V40.8995Z"/>
         <path d="M55.818 41.572L55.5072 40.7161H55.2585V41.9999H55.445V41.144L55.7558 41.9999H55.9423L56.1909 41.144V41.9999H56.3774V40.7161H56.1288L55.818 41.572Z"/>
@@ -69,6 +69,10 @@
       </svg>
     </a>
 
+    <button class="sidebar-toggle-btn1" id="sidebarToggleBtn1" aria-expanded="true" aria-label="Toggle section navigation" type="button">
+      <span class="sidebar-toggle-icon" aria-hidden="true">☰</span>
+    </button>
+
     <!-- Main navigation -->
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
@@ -76,9 +80,9 @@
         <li><a href="#">Admissions</a></li>
         <li><a href="#">Cost &amp; Aid</a></li>
         <li><a href="#">Campus Life</a></li>
-        <li><a href="#">Visit</a></li>
-        <li><a href="#" class="nav-apply">Apply</a></li>
-        <li><a href="#" class="nav-request">Request Info</a></li>
+        <li><a href="https://www.shsu.edu/visit/">Visit</a></li>
+        <li><a href="https://www.shsu.edu/admissions/apply/" class="nav-apply">Apply</a></li>
+        <li><a href="https://www.shsu.edu/admissions/request-info" class="nav-request">Request Info</a></li>
       </ul>
     </nav>
 
@@ -110,32 +114,29 @@
 </div>
 
 <!-- ==========================================
-     Two-Column Layout: Sidebar + Main
+   Sidebar Menu + Button to Toggle Menu
      ========================================== -->
 <div class="container layout-wrapper">
   <div class="layout">
 
     <!-- Left sidebar navigation -->
-    <aside>
+    <div class="sidebar-wrapper">
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-expanded="true" aria-label="Toggle section navigation" type="button">
+        <span class="sidebar-toggle-icon" aria-hidden="true">☰</span>
+      </button>
       <nav class="sidebar-nav" aria-label="Section navigation">
         <ul class="sidebar-list">
-          <li><a href="#">Veterans Benefits Processing</a></li>
+          <li><a href="../index.html">Veterans Benefits Processing</a></li>
           <li><a href="#" class="active">Active Duty Students</a></li>
-          <li class="has-flyout">
-            <a href="#">Benefits <span class="flyout-indicator" aria-hidden="true">›</span></a>
-            <ul class="flyout" aria-label="Benefits submenu">
-              <li><a href="#">Hazlewood</a></li>
-              <li><a href="#">Federal Benefits</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Veterans &amp; Military Connected Center</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="../trintin_benefits/benefits_page_v4.html">Benefits</a></li>
+          <li><a href="../veterens-and-military-connected-center/files/Veterens-military-connected-center.html" target="_blank">Veterans & Military Connected Center ↗</a></li>
+          <li><a href="../contacts_v2.html" target="_parent">Contact Us</a></li>
         </ul>
       </nav>
-    </aside>
+    </div>
 
     <!-- Main content -->
-    <main>
+    <main class="main-content">
 
       <h2>Active Duty Students</h2>
       <p>Active-duty students are currently serving military personnel who pursue educational opportunities while on active duty. They often utilize benefits such as Military Tuition Assistance (TA) and, in some cases, the GI Bill&reg; to cover tuition and related expenses, helping them advance their education without interrupting their service.</p>
@@ -187,7 +188,7 @@
         <div class="tab-content" id="content1">
           <h3>Resignation as an Option</h3>
           <ul class="resign-list">
-            <li>Submit the <a href="#">Resignation Form</a>.</li>
+            <li>Submit the <a href="https://www.shsu.edu/offices-departments/registrar/registration/resignations">Resignation Form</a>.</li>
             <li>Send an email to <a href="mailto:registrar@shsu.edu">registrar@shsu.edu</a> from your SHSU email account.</li>
             <li>Subject line must read: <em>"Resignation Additional Documents – Military Orders (Sam ID 000xxxxxx)"</em></li>
             <li>Attach official military orders to the email.</li>
@@ -198,8 +199,8 @@
 
         <div class="tab-content" id="content2">
           <h3>Dropping Courses as an Option</h3>
-          <p>If you are enrolled in multiple courses and need to drop a class (but not all), dropping may be appropriate. A course dropped after <a href="#">Census Day</a> will result in a grade of "Q." If you wish to drop your only class for the term, you must submit a <a href="#">resignation request</a> instead.</p>
-          <p><a href="#">See more information on Q Drops &raquo;</a></p>
+          <p>If you are enrolled in multiple courses and need to drop a class (but not all), dropping may be appropriate. A course dropped after <a href="https://www.shsu.edu/offices-departments/registrar/calendars/academic-calendar">Census Day</a> will result in a grade of "Q." If you wish to drop your only class for the term, you must submit a <a href="https://www.shsu.edu/offices-departments/registrar/registration/resignations">resignation request</a> instead.</p>
+          <p><a href="https://www.shsu.edu/offices-departments/registrar/registration/drop">See more information on Q Drops &raquo;</a></p>
         </div>
 
         <div class="tab-content" id="content3">
@@ -216,22 +217,22 @@
           <p>Each branch of service handles Tuition Assistance differently. To find out how to get started, visit your Educational Services Officer (ESO) or Education Counselor within your branch of military service.</p>
 
           <h3 class="mt-section">Air Force, Air Force Reserve &amp; Air National Guard</h3>
-          <p>Apply for TA through the <a href="#">Air Force Virtual Education Center (AFVEC)</a>.</p>
+          <p>Apply for TA through the <a href="https://afvec.us.af.mil/afvec/public/welcome">Air Force Virtual Education Center (AFVEC)</a>.</p>
 
           <h3>Army, Army Reserve &amp; Army National Guard</h3>
-          <p>Apply for TA through <a href="#">ArmyIgnitED</a>.</p>
+          <p>Apply for TA through <a href="https://www.mnveteranslinkageline.org/s/article/ArmyIgnitED-Online-Portal">ArmyIgnitED</a>.</p>
 
           <h3>All Branches</h3>
           <ul class="branches">
-            <li><a href="#">Air Force / Reserve / Air National Guard</a></li>
-            <li><a href="#">Army / Army Reserve</a></li>
-            <li><a href="#">Army National Guard</a></li>
-            <li><a href="#">Coast Guard</a></li>
-            <li><a href="#">Navy</a></li>
+            <li><a href="https://afvec.us.af.mil/afvec/public/welcome">Air Force / Reserve / Air National Guard</a></li>
+            <li><a href="https://www.mnveteranslinkageline.org/s/article/ArmyIgnitED-Online-Portal">Army / Army Reserve</a></li>
+            <li><a href="https://www.nationalguard.com/education">Army National Guard</a></li>
+            <li><a href="https://www.forcecom.uscg.mil/Our-Organization/FORCECOM-UNITS/ETQC/VOLUNTARY-EDUCATION/Tuition-Assistance/">Coast Guard</a></li>
+            <li><a href="https://www.navycollege.navy.mil/sailors/tuition-assistance">Navy</a></li>
           </ul>
 
           <div class="callout">
-            <strong>Payment Due Dates:</strong> If you are using military Tuition Assistance, the service member must meet the payment deadline for the semester. See payment due dates on the <a href="#">Student Account Services webpage</a>.
+            <strong>Payment Due Dates:</strong> If you are using military Tuition Assistance, the service member must meet the payment deadline for the semester. See payment due dates on the <a href="https://www.shsu.edu/offices-departments/student-account-services/cashiering-services/payments">Student Account Services webpage</a>.
           </div>
         </div>
       </div>
@@ -239,13 +240,13 @@
       <h2>How to Use ArmyIgnitED</h2>
       <ol class="steps">
         <li>
-          <strong>Submit your Education Path.</strong> Select your Education Path in <a href="#">ArmyIgnitED</a> and receive approval/verification from your Army Education Counselor, then from Sam Houston State University.
+          <strong>Submit your Education Path.</strong> Select your Education Path in <a href="https://www.mnveteranslinkageline.org/s/article/ArmyIgnitED-Online-Portal">ArmyIgnitED</a> and receive approval/verification from your Army Education Counselor, then from Sam Houston State University.
           <div class="callout">
             <strong>Note:</strong> Prior to getting approved for your path, you must be fully accepted into Sam Houston State University for that requested program.
           </div>
         </li>
         <li>
-          <strong>Register for classes through <a href="#">MySam</a>.</strong> Adhere to all institutional and ArmyIgnitED deadlines. All classes must be registered prior to the first class day of the term. See <a href="#">SHSU's registration deadlines</a>.
+          <strong>Register for classes through <a href="https://mysam.shsu.edu/registration/">MySam</a>.</strong> Adhere to all institutional and ArmyIgnitED deadlines. All classes must be registered prior to the first class day of the term. See <a href="https://www.shsu.edu/offices-departments/registrar/calendars/academic-calendar">SHSU's registration deadlines</a>.
         </li>
         <li>
           <strong>Verify all SHSU courses are loaded in ArmyIgnitED, then request TA approval.</strong> Refer to your Army Education Counselor for TA approval requirements and turnaround time.
@@ -254,12 +255,32 @@
           </div>
         </li>
         <li>
-          <strong>Meet all payment deadlines for the term.</strong> See <a href="#">Student Account Services payment due dates</a>.
+          <strong>Meet all payment deadlines for the term.</strong> See <a href="https://www.shsu.edu/offices-departments/student-account-services/cashiering-services/payments">Student Account Services payment due dates</a>.
         </li>
       </ol>
 
     </main>
   </div>
+</div>
+
+
+<!-- ==========================================
+  External Pop-up Site Warning  
+  ==========================================-->
+<div id="externalModal" class="external-modal">
+    <div class="external-modal-content">
+        <h2>You are leaving Veterans Benefits Processing</h2>
+        <p>Continue?</p>
+
+        <p class="countdown-text">
+            Redirecting in <span id="countdown">10</span> seconds...
+        </p>
+
+        <div class="modal-buttons">
+            <button id="continueBtn" class="modal-continue">Continue</button>
+            <button id="cancelBtn" class="modal-cancel">Cancel</button>
+        </div>
+    </div>
 </div>
 
 <!-- ==========================================
@@ -274,21 +295,21 @@
     <div>
       <h4>Resources</h4>
       <ul>
-        <li><a href="#">Policies</a></li>
-        <li><a href="#">Title IX</a></li>
-        <li><a href="#">Site Directory</a></li>
-        <li><a href="#">KatSafe</a></li>
-        <li><a href="#">Jobs</a></li>
+        <li><a href="https://www.shsu.edu/institutional-transparency/university-policies">Policies</a></li>
+        <li><a href="https://www.shsu.edu/offices-departments/title-ix/">Title IX</a></li>
+        <li><a href="https://www.shsu.edu/offices-departments/">Site Directory</a></li>
+        <li><a href="https://www.shsu.edu/katsafe/">KatSafe</a></li>
+        <li><a href="https://www.shsu.edu/hiring/">Jobs</a></li>
       </ul>
     </div>
     <div>
       <h4>State of Texas</h4>
       <ul>
-        <li><a href="#">State of Texas</a></li>
-        <li><a href="#">Texas Homeland Security</a></li>
-        <li><a href="#">TRAIL</a></li>
-        <li><a href="#">Fraud Reporting Hotline</a></li>
-        <li><a href="#">Open Records Requests</a></li>
+        <li><a href="https://www.texas.gov/">State of Texas</a></li>
+        <li><a href="https://gov.texas.gov/organization/hsgd">Texas Homeland Security</a></li>
+        <li><a href="https://www.tsl.texas.gov/trail/index.html">TRAIL</a></li>
+        <li><a href="https://www.tsus.edu/offices/internal-audit/report-fraud.html">Fraud Reporting Hotline</a></li>
+        <li><a href="https://www.shsu.edu/institutional-transparency/open-records-requests">Open Records Requests</a></li>
       </ul>
     </div>
   </div>
@@ -297,5 +318,179 @@
   </div>
 </footer>
 
+
+<!-------------------------------
+    External Link Pop-up Warning Script
+------------------------------>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const externalLink = document.querySelector(
+        'a[href*="Veterens-military-connected-center.html"]'
+    );
+
+    const modal = document.getElementById("externalModal");
+    const continueBtn = document.getElementById("continueBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+    const countdownEl = document.getElementById("countdown");
+
+    let countdown = 10;
+    let timer;
+
+    const externalURL = "../veterens-and-military-connected-center/files/Veterens-military-connected-center.html";
+
+    externalLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "flex";
+
+        countdown = 10;
+        countdownEl.textContent = countdown;
+
+        timer = setInterval(() => {
+            countdown--;
+            countdownEl.textContent = countdown;
+
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = externalURL;
+            }
+        }, 1000);
+    });
+
+    continueBtn.addEventListener("click", () => {
+        clearInterval(timer);
+        window.location.href = externalURL;
+    });
+
+    cancelBtn.addEventListener("click", () => {
+        clearInterval(timer);
+        modal.style.display = "none";
+    });
+
+});
+</script>
+
+<!-------------------------------
+ Sidebar Menu Toggle Button Desktop + Mobile
+ ------------------------------>
+<script>
+  const toggleButtons = [
+    document.getElementById('sidebarToggleBtn'),
+    document.getElementById('sidebarToggleBtn1')
+  ].filter(Boolean);
+
+  const layoutElement = document.querySelector('.layout');
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const collapsed = layoutElement.classList.toggle('menu-collapsed');
+      toggleButtons.forEach(b => b.setAttribute('aria-expanded', String(!collapsed)));
+    });
+  });
+</script>
+
+<!-------------------------------
+ Mobile Sidebar Menu Collapsed
+ ------------------------------>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const layout = document.querySelector(".layout");
+
+    if (window.innerWidth <= 768) {
+      layout.classList.add("menu-collapsed");
+    }
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 768) {
+        layout.classList.add("menu-collapsed");
+      }
+    });
+  });
+</script>
+
+<!-- ChatBot Script -->
+<div class="dify-wrapper">
+<script>
+ window.difyChatbotConfig = {
+  token: 'f0uBsDEFdBM2wRaN',
+  inputs: {
+    // You can define the inputs from the Start node here
+    // key is the variable name
+    // e.g.
+    // name: "NAME"
+  },
+  systemVariables: {
+    // user_id: 'YOU CAN DEFINE USER ID HERE',
+    // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+  },
+  userVariables: {
+    // avatar_url: //trintin_benefits/shsuBearkatLogo.svg,
+    // name: 'YOU CAN DEFINE USER NAME HERE',
+  },
+ }
+</script>
+<script
+ src="https://udify.app/embed.min.js"
+ id="f0uBsDEFdBM2wRaN"
+ defer>
+</script>
+
+<script>
+  // Wait for Dify bubble to exist, then animate once
+  window.addEventListener('load', () => {
+    const MAX_WAIT_MS = 8000; // safety cap
+    const CHECK_INTERVAL_MS = 200;
+
+    let waited = 0;
+    const intervalId = setInterval(() => {
+      const bubble = document.querySelector('#dify-chatbot-bubble-button');
+
+      if (bubble) {
+        bubble.classList.add('dify-bubble-animate');
+
+        setTimeout(() => {
+          bubble.classList.remove('dify-bubble-animate');
+        }, 2000);
+
+        clearInterval(intervalId);
+      }
+
+      waited += CHECK_INTERVAL_MS;
+      if (waited >= MAX_WAIT_MS) {
+        clearInterval(intervalId);
+      }
+    }, CHECK_INTERVAL_MS);
+  });
+</script>
+
+</div>
+<style>
+#dify-chatbot-bubble-button {
+    background-color: #F56423 !important;
+}
+#dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+    position: fixed !important;
+    bottom: 70px !important;
+    right: 20px !important;
+}
+.dify-wrapper {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+}
+/* Chatbot Attention Animation */
+@keyframes difyPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(245, 100, 35, 0.0); }
+    50% { transform: scale(1.12); box-shadow: 0 0 18px rgba(245, 100, 35, 0.55); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(245, 100, 35, 0.0); }
+}
+
+.dify-bubble-animate {
+    animation: difyPulse 0.6s ease-in-out 3; /* 3 pulses = ~2 seconds */
+}
+</style>
 </body>
 </html>

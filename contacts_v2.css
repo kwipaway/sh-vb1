@@ -1,29 +1,22 @@
+/* ========================================================================================================
+   SECTION 1 — RESET & BASE STYLES
+   ======================================================================================================== */
 
-/* =============================================
-   Reset & Base Styles
-   ============================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-                 "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-    font-feature-settings: normal;
-    font-variation-settings: normal;
-    tab-size: 4;
+img {
+    max-width: 100%;
+    display: block;
 }
 
-img { max-width: 100%; display: block; }
+/* ========================================================================================================
+   SECTION 2 — ROOT VARIABLES
+   ======================================================================================================== */
 
-/* =============================================
-   Custom Properties & Container
-   ============================================= */
 :root {
   --shsu-orange: rgb(245, 100, 35);
   --shsu-white: rgb(255, 255, 255);
@@ -34,7 +27,30 @@ img { max-width: 100%; display: block; }
   --gray-200: #e2e0da;
   --gray-500: #6b6b6b;
   --gray-800: #2a2a2a;
+
+  /* You chose homepage background */
+  --page-bg: #f9f9f9;
 }
+
+/* ========================================================================================================
+   SECTION 3 — GLOBAL ELEMENTS
+   ======================================================================================================== */
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--shsu-dark-cyan);
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.6;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  tab-size: 4;
+}
+
+/* ========================================================================================================
+   SECTION 4 — CONTAINER
+   ======================================================================================================== */
 
 .container {
   max-width: 1180px;
@@ -42,9 +58,10 @@ img { max-width: 100%; display: block; }
   padding: 0 1.5rem;
 }
 
-/* =============================================
-   Utility Bar
-   ============================================= */
+/* ========================================================================================================
+   SECTION 5 — UTILITY BAR
+   ======================================================================================================== */
+
 .util-bar {
     position: relative;
     background: var(--shsu-dark-cyan);
@@ -99,9 +116,10 @@ img { max-width: 100%; display: block; }
   border-color: rgba(255, 255, 255, 0.7);
 }
 
-/* =============================================
-   Site Header
-   ============================================= */
+/* ========================================================================================================
+   SECTION 6 — SITE HEADER
+   ======================================================================================================== */
+
 .site-header {
   background: var(--shsu-white);
   border-bottom: 4px solid var(--shsu-orange);
@@ -133,6 +151,10 @@ img { max-width: 100%; display: block; }
   height: 38px;
   width: auto;
 }
+
+/* ========================================================================================================
+   SECTION 7 — MAIN NAVIGATION
+   ======================================================================================================== */
 
 .main-nav ul {
   list-style: none;
@@ -189,79 +211,18 @@ img { max-width: 100%; display: block; }
   color: var(--shsu-white) !important;
   border-color: var(--shsu-dark-cyan) !important;
 }
-
-/* =============================================
-   Page Title Section
-   ============================================= */
-.page-title-section {
-  background: var(--shsu-dark-cyan);
-}
-
-.hero-image {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  display: block;
-}
-
-.page-title-inner {
-  padding: 2.25rem 0 2.75rem;
-}
-
-.page-title {
-  font-family: gt-flexa-compressed, sans-serif;
-  font-size: 3.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  line-height: 0.8;
-  color: var(--shsu-orange);
-  max-width: 860px;
-}
-
-/* =============================================
-   "Before You Begin" Notice
-   ============================================= */
-.notice-band {
-  background: var(--shsu-white);
-  border-top: none;
-  padding: 2rem 0;
-}
-
-.notice {
-  background: var(--shsu-white);
-  border-left: 6px solid var(--shsu-orange);
-  padding: 1.4rem 1.75rem;
-  box-shadow: 0 4px 18px rgba(0, 72, 83, 0.1);
-  border-radius: 2px;
-}
-
-.notice h3 {
-  font-family: gt-america, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: var(--shsu-dark-cyan);
-  margin-bottom: 0.5rem;
-}
-
-.notice p {
-  font-size: 0.96rem;
-  margin: 0;
-}
-
-
 /* ========================================================================================================
-   HAMBURGER MENU BUTTON & SIDE NAVIGATION WINDOW - All responsive styles for desktop and mobile screens
+   SECTION 8 — LAYOUT WRAPPER
    ======================================================================================================== */
 
-/* =============================================
-   Layout: Sidebar + Main
-   ============================================= */
 .layout-wrapper {
     padding-top: 2.5rem;
     padding-bottom: 4rem;
 }
+
+/* ========================================================================================================
+   SECTION 9 — SIDEBAR TOGGLE BUTTONS (Desktop + Mobile)
+   ======================================================================================================== */
 
 .sidebar-toggle-btn {
     position: sticky;
@@ -285,6 +246,15 @@ img { max-width: 100%; display: block; }
     transition: all 0.2s ease;
 }
 
+.sidebar-toggle-btn:hover {
+    background: rgb(225, 90, 20);
+    box-shadow: 0 4px 12px rgba(245, 100, 35, 0.35);
+}
+
+.sidebar-toggle-btn:active {
+    transform: scale(0.98);
+}
+
 .sidebar-toggle-btn1 {
     display: none;
     z-index: 1750;
@@ -302,22 +272,16 @@ img { max-width: 100%; display: block; }
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(245, 100, 35, 0.25);
     transition: all 0.2s ease;
-    
-}
-
-.sidebar-toggle-btn:hover {
-    background: rgb(225, 90, 20);
-    box-shadow: 0 4px 12px rgba(245, 100, 35, 0.35);
-}
-
-.sidebar-toggle-btn:active {
-    transform: scale(0.98);
 }
 
 .sidebar-toggle-icon {
     font-size: 1rem;
     line-height: 1;
 }
+
+/* ========================================================================================================
+   SECTION 10 — LAYOUT GRID (Sidebar + Main Content)
+   ======================================================================================================== */
 
 .layout {
     display: grid;
@@ -342,12 +306,13 @@ img { max-width: 100%; display: block; }
     min-width: 0;
 }
 
-/* =============================================
-   Sidebar Navigation
-   ============================================= */
+/* ========================================================================================================
+   SECTION 11 — SIDEBAR NAVIGATION (Merged + Cleaned)
+   ======================================================================================================== */
+
 .sidebar-nav {
     background: var(--shsu-white);
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--gray-200); /* You chose homepage border */
     border-radius: 3px;
     overflow: visible;
 }
@@ -378,7 +343,7 @@ img { max-width: 100%; display: block; }
 }
 
 .sidebar-list > li > a:hover {
-    background: var(--gray-50);
+    background: var(--gray-50); /* You chose homepage hover */
     border-left-color: var(--shsu-orange);
 }
 
@@ -389,13 +354,16 @@ img { max-width: 100%; display: block; }
     font-weight: 700;
 }
 
+/* ========================================================================================================
+   SECTION 12 — FLYOUT MENUS (Homepage functionality)
+   ======================================================================================================== */
+
 .flyout-indicator {
     font-size: 1.05rem;
     color: var(--gray-500);
     line-height: 1;
 }
 
-/* Flyout submenu — pure CSS :hover */
 .has-flyout .flyout {
     display: none;
     position: absolute;
@@ -415,7 +383,29 @@ img { max-width: 100%; display: block; }
     display: block;
 }
 
-/* Benefits accordion submenu — appears inline and pushes items down */
+.has-flyout .flyout li a {
+    display: block;
+    padding: 0.65rem 1rem;
+    color: var(--shsu-dark-cyan);
+    text-decoration: none;
+    font-size: 0.87rem;
+    border-bottom: 1px solid var(--gray-200);
+    transition: background 0.15s, color 0.15s;
+}
+
+.has-flyout .flyout li:last-child a {
+    border-bottom: none;
+}
+
+.has-flyout .flyout li a:hover {
+    background: var(--gray-50);
+    color: var(--shsu-orange);
+}
+
+/* ========================================================================================================
+   SECTION 13 — BENEFITS ACCORDION (Homepage functionality)
+   ======================================================================================================== */
+
 .benefits-flyout {
     display: none;
     list-style: none;
@@ -448,7 +438,6 @@ img { max-width: 100%; display: block; }
     color: var(--shsu-dark-cyan);
     text-decoration: none;
     font-size: 0.87rem;
-    border-left: none;
     transition: background 0.15s, color 0.15s;
 }
 
@@ -467,41 +456,25 @@ img { max-width: 100%; display: block; }
     transition: transform 0.3s ease;
 }
 
-.has-flyout .flyout li a {
-    display: block;
-    padding: 0.65rem 1rem;
-    color: var(--shsu-dark-cyan);
-    text-decoration: none;
-    font-size: 0.87rem;
-    border-bottom: 1px solid var(--gray-200);
-    border-left: none;
-    transition: background 0.15s, color 0.15s;
-}
+/* ========================================================================================================
+   SECTION 14 — LIGHT BORDER UTILITY
+   ======================================================================================================== */
 
-.has-flyout .flyout li:last-child a {
-    border-bottom: none;
-}
-
-.has-flyout .flyout li a:hover {
-    background: var(--gray-50);
-    color: var(--shsu-orange);
-}
-
-/* Light border utility class */
 .border-b-theme-on-primary {
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
+/* ========================================================================================================
+   SECTION 15 — MAIN CONTENT AREA (Homepage)
+   ======================================================================================================== */
 
-
-
-/* =============================================
- Main Content Area ============================================= */
-/* Main content area */
 .main-content {
     flex: 1 1 auto;
 }
 
-/* Intro section styling */
+/* ========================================================================================================
+   SECTION 16 — INTRO SECTIONS (Homepage)
+   ======================================================================================================== */
+
 .intro-section {
     background: white;
     padding: 2rem;
@@ -510,14 +483,16 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Paragraph styling inside intro section */
 .intro-section p {
     font-size: 1rem;
     margin-bottom: 1rem;
     color: #333;
 }
 
-/* Benefit overview card styling */
+/* ========================================================================================================
+   SECTION 17 — BENEFITS OVERVIEW (Homepage)
+   ======================================================================================================== */
+
 .benefits-overview {
     background: white;
     padding: 2rem;
@@ -526,7 +501,10 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Section title styling */
+/* ========================================================================================================
+   SECTION 18 — SECTION TITLES (Homepage)
+   ======================================================================================================== */
+
 .section-title {
     font-family: gt-america, sans-serif;
     font-size: 2rem;
@@ -537,7 +515,6 @@ img { max-width: 100%; display: block; }
     padding-bottom: 0.5rem;
 }
 
-/* Subsection title styling */
 .subsection-title {
     font-family: gt-america, sans-serif;
     font-size: 1.5rem;
@@ -547,7 +524,10 @@ img { max-width: 100%; display: block; }
     margin-bottom: 1rem;
 }
 
-/* Table layout and styling */
+/* ========================================================================================================
+   SECTION 19 — COMPARISON TABLES (Homepage)
+   ======================================================================================================== */
+
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
@@ -558,13 +538,11 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Table header background */
 .comparison-table thead {
     background-color: rgb(0, 72, 83);
     color: white;
 }
 
-/* Table header cells */
 .comparison-table th {
     padding: 1rem;
     text-align: left;
@@ -572,23 +550,23 @@ img { max-width: 100%; display: block; }
     border: 1px solid #ddd;
 }
 
-/* Table body cells */
 .comparison-table td {
     padding: 1rem;
     border: 1px solid #ddd;
 }
 
-/* Alternating row color */
 .comparison-table tbody tr:nth-child(even) {
     background-color: #f5f5f5;
 }
 
-/* Hover highlight */
 .comparison-table tbody tr:hover {
     background-color: #efefef;
 }
 
-/* Highlighted requirement list box */
+/* ========================================================================================================
+   SECTION 20 — REQUIREMENT LIST BOXES (Homepage)
+   ======================================================================================================== */
+
 .requirement-list {
     background: #f9f9f9;
     border-left: 4px solid rgb(245, 100, 35);
@@ -597,25 +575,25 @@ img { max-width: 100%; display: block; }
     border-radius: 4px;
 }
 
-/* Requirement list title */
 .requirement-list h4 {
     color: rgb(0, 72, 83);
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
-/* Requirement list bullets */
 .requirement-list ul {
     list-style-position: inside;
     color: #333;
 }
 
-/* Individual requirement spacing */
 .requirement-list li {
     margin-bottom: 0.5rem;
 }
 
-/* Green highlight box */
+/* ========================================================================================================
+   SECTION 21 — HIGHLIGHT BOXES (Homepage)
+   ======================================================================================================== */
+
 .highlight-box {
     background: rgb(163, 210, 55);
     color: rgb(0, 72, 83);
@@ -625,7 +603,10 @@ img { max-width: 100%; display: block; }
     font-weight: 500;
 }
 
-/* Caution box styling */
+/* ========================================================================================================
+   SECTION 22 — CAUTION BOXES (Homepage)
+   ======================================================================================================== */
+
 .caution-box {
     background: #fff3cd;
     border-left: 4px solid #ff6600;
@@ -635,12 +616,14 @@ img { max-width: 100%; display: block; }
     margin: 1.5rem 0;
 }
 
-/* Bold caution text */
 .caution-box strong {
     color: rgb(245, 100, 35);
 }
 
-/* Grid layout for info cards */
+/* ========================================================================================================
+   SECTION 23 — INFO GRID + CARDS (Homepage)
+   ======================================================================================================== */
+
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -648,7 +631,6 @@ img { max-width: 100%; display: block; }
     margin: 2rem 0;
 }
 
-/* Individual info card styling */
 .info-card {
     background: white;
     padding: 1.5rem;
@@ -657,23 +639,110 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Info card title */
 .info-card h3 {
     color: rgb(0, 72, 83);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
 
-/* Info card text */
 .info-card p {
     color: #666;
     font-size: 0.95rem;
 }
 
+/* ========================================================================================================
+   SECTION 24 — CONTACT PAGE CONTENT (Contacts‑First)
+   ======================================================================================================== */
 
-/* =============================================
-   Footer
-   ============================================= */
+.page-wrap {
+  width: min(1080px, 100% - 40px);
+  margin: 38px auto 40px;
+}
+
+.page {
+  background: #f7f7f7;
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  padding: 56px 56px 40px;
+}
+
+.headline {
+  margin: 0;
+  color: var(--shsu-orange);
+  font-family: gt-flexa-compressed, sans-serif;
+  font-size: 3.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 0.8;
+  letter-spacing: 0;
+}
+
+.top-contact {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 54px;
+  align-items: start;
+}
+
+.contact-details {
+  max-width: 300px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.5;
+  font-family: gt-america, sans-serif;
+}
+
+.contact-details p {
+  margin: 0 0 7px;
+}
+
+.contact-details .office {
+  margin-top: 12px;
+}
+
+.staff-section {
+  margin-top: 68px;
+}
+
+.team-card {
+  margin-top: 18px;
+  max-width: 700px;
+  background: var(--shsu-dark-cyan);
+  border-radius: 6px;
+  padding: 14px 16px 20px;
+  color: var(--shsu-white);
+}
+
+.team-card h3 {
+  margin: 0 0 10px;
+  color: var(--shsu-lime);
+  font-family: gt-america, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.team-card p {
+  margin: 0 0 9px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.team-card .staff-name {
+  font-family: gt-america, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+.team-card a {
+  color: var(--shsu-white);
+  text-decoration-thickness: 1px;
+}
+/* ========================================================================================================
+   SECTION 25 — FOOTER (Homepage)
+   ======================================================================================================== */
+
 footer {
     background-color: rgb(0, 72, 83);
     color: white;
@@ -691,12 +760,81 @@ footer {
     border-top: 1px solid #ddd;
 }
 
+/* ========================================================================================================
+   SECTION 26 — CONTACT PAGE FOOTER (Contacts‑First)
+   ======================================================================================================== */
 
-/* =============================================
-   Animations & Utility Classes
-   ============================================= */
+.footer-top {
+  margin-top: 46px;
+  border-top: 1px solid var(--shsu-orange);
+  padding-top: 28px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px 40px;
+  align-items: start;
+}
 
-/* Scroll indicator base styling (hidden by default) */
+.footer-brand {
+  color: var(--shsu-orange);
+  font-family: gt-flexa-compressed, sans-serif;
+  font-size: 4.2rem;
+  line-height: 0.8;
+}
+
+.resource-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 10px 62px;
+  max-width: 700px;
+}
+
+.resource-links a {
+  color: var(--shsu-dark-cyan);
+  text-decoration: none;
+  font-family: gt-america, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.resource-links a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 38px;
+  border-top: 1px solid var(--shsu-dark-cyan);
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.member {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: gt-america, sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.3;
+  font-weight: 700;
+  max-width: 220px;
+}
+
+.motto {
+  margin: 0;
+  text-align: right;
+  text-transform: uppercase;
+  font-family: gt-america, sans-serif;
+  font-size: 0.74rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* ========================================================================================================
+   SECTION 27 — ANIMATIONS & SCROLL INDICATORS (Homepage)
+   ======================================================================================================== */
+
 .scroll-indicator,
 .scroll-indicator-top,
 .scroll-indicator-bottom {
@@ -708,96 +846,60 @@ footer {
     animation: fadeInUp 1s ease-in-out;
 }
 
-/* Scroll arrow animation */
 .scroll-arrows {
     display: inline-block;
     font-size: 1.5rem;
     line-height: 1;
 }
 
-/* Individual arrow animation */
 .arrow {
     display: inline-block;
     animation: bounce 2s infinite;
     margin: 0 0.25rem;
 }
 
-/* Arrow animation delays */
 .arrow:nth-child(2) { animation-delay: 0.2s; }
 .arrow:nth-child(3) { animation-delay: 0.4s; }
 
-/* Bounce animation */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); opacity: 1; }
     50% { transform: translateY(-10px); opacity: 0.7; }
 }
 
-/* Fade-in animation */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Show top scroll indicator on short screens */
 @media (max-height: 700px) {
     .scroll-indicator-top { display: block; }
 }
 
-/* Show bottom scroll indicator on medium-height screens */
 @media (min-height: 700px) and (max-height: 1000px) {
     .scroll-indicator-bottom { display: block; }
 }
 
+/* ========================================================================================================
+   SECTION 28 — RESPONSIVE MEDIA QUERIES (Homepage + Contacts)
+   ======================================================================================================== */
 
-/* =============================================
-   Responsive Media Queries
-   ============================================= */
-
-/* Responsive adjustments for small screens */
+/* Small screens */
 @media (max-width: 768px) {
+
     .page-title { font-size: 2.5rem; }
     .section-title { font-size: 1.5rem; }
+
     .comparison-table { font-size: 0.9rem; }
     .comparison-table th,
     .comparison-table td { padding: 0.75rem 0.5rem; }
-    
-    .main-nav {
-        display: none;
-    }
-    
+
+    .main-nav { display: none; }
+
     .header-inner {
         justify-content: space-between;
     }
-}
 
-/* Desktop behavior: Full grid layout on larger screens */
-@media (min-width: 769px) {
-    .layout {
-        display: grid;
-        grid-template-columns: 255px 1fr;
-        gap: 3rem;
-        align-items: start;
-    }
-
-    /* Sticky sidebar wrapper */
-    .sidebar-wrapper {
-        position: sticky;
-        top: 120px; 
-        max-height: calc(100vh - 120px);
-        height: auto;
-        align-self: start;
-    }
-
-    /* Sidebar scrolls inside the wrapper */
-    .sidebar-nav {
-        position: static;
-        height: 100%;
-        overflow-y: auto;
-    }
-}
-
-/* Mobile behavior: Single column layout */
-@media (max-width: 768px) {
+    /* Layout */
     .layout {
         display: block;
         margin-left: auto;
@@ -811,7 +913,7 @@ footer {
         position: sticky;
         top: 1rem;
         right: 1rem;
-        left: auto ;
+        left: auto;
         display: block;
         margin-left: auto;
         z-index: 1200;
@@ -819,10 +921,6 @@ footer {
         font-size: 0.8rem;
         box-shadow: 0 2px 6px rgba(245, 100, 35, 0.2);
         transition: all 0.35s ease;
-    }    
-
-    .sidebar-toggle-btn:hover {
-        box-shadow: 0 3px 8px rgba(245, 100, 35, 0.3);
     }
 
     .sidebar-nav {
@@ -838,7 +936,6 @@ footer {
         transform: translateX(0);
         transition: transform 0.50s ease;
         border: 1px solid var(--gray-200);
-        border-radius: 0 0 0 0;
         padding-top: 5rem;
     }
 
@@ -846,22 +943,77 @@ footer {
         transform: translateX(100%);
     }
 
-    .layout.menu-collapsed .main-content {
-        margin-top: 0;
-    }
-
     .main-content {
         padding-top: 5rem;
+    }
+
+    /* Contact page responsive */
+    .page {
+        padding: 34px 24px 24px;
+    }
+
+    .headline {
+        font-size: 2.9rem;
+    }
+
+    .top-contact {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .staff-section {
+        margin-top: 44px;
+    }
+
+    .resource-links {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        gap: 9px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .motto {
+        text-align: left;
+    }
+}
+
+/* Desktop screens */
+@media (min-width: 769px) {
+
+    .layout {
+        display: grid;
+        grid-template-columns: 255px 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .sidebar-wrapper {
+        position: sticky;
+        top: 120px;
+        max-height: calc(100vh - 120px);
+        height: auto;
+        align-self: start;
+    }
+
+    .sidebar-nav {
+        position: static;
+        height: 100%;
+        overflow-y: auto;
     }
 }
 
 /* ========================================================================================================
-   END OF HAMBURGER MENU BUTTON & SIDE NAVIGATION WINDOW
+   SECTION 29 — EXTERNAL LINK WARNING MODAL (Homepage)
    ======================================================================================================== */
 
-/* ========================================================================================================
-   External Pop-up Site Warning
-   ======================================================================================================== */   
 .external-modal {
     position: fixed;
     inset: 0;
